@@ -1,0 +1,344 @@
+.machine-faq {
+  .center {
+    max-width: 1380px;
+    margin: 0 auto;
+  }
+
+  &__haed-content {
+    padding: 40px 0 60px;
+    text-align: center;
+    line-height: 1.4;
+
+    h2 {
+      font-size: 40px;
+    }
+
+    p {
+      margin-top: 8px;
+      font-size: 18px;
+    }
+
+    .img-content {
+      display: block;
+      width: 100%;
+      margin-top: 32px;
+      padding-top: 31.8%;
+      background: {
+        image: url(../images/machine-faq/img-keyvisual-pc.png);
+        position: 0 0;
+        size: cover;
+        repeat: no-repeat;
+      }
+    }
+
+    @media screen and (max-width: 1024px) {
+      max-width: 100%;
+      padding: 28px 20px 12px;
+      
+
+      h2 {
+        font-size: 22px;
+      }
+  
+      p {
+        margin-top: 4px;
+        font-size: 14px;
+  
+        span {
+          display: block;
+        }
+      }
+  
+      .img-content {
+        margin-top:20px;
+        padding-top: 115.8%;
+        background: {
+          image: url(../images/machine-faq/img-keyvisual-mo.png);
+        }
+      }
+    }
+  }
+
+  &__tap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #DDDDDD;
+
+    button {
+      position: relative;
+      width: 50%;
+      padding: 24px 0;
+      color: #767676;
+      font-size: 16px;
+      line-height: 1;
+
+      &.active {
+        color: #000000;
+        font-weight: 700;
+
+        &::after {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          display: block;
+          width: 100%;
+          height: 3px;
+          background: #000000;
+          content :'';
+        }
+      }
+    }
+  }
+
+  &__inner-content {
+    display: none;
+    background-color: #F9F9F9;
+
+    &.show {
+      display: block;
+    }
+
+    .center {
+      padding: 80px 0 100px;
+    }
+
+    h3 {
+      padding-bottom: 40px;
+      color: #000000;
+      font-size: 28px;
+      text-align: center;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+
+    @media screen and (max-width: 1024px) {
+      .center {
+        padding: 40px 16px;
+      }
+
+      h3 {
+        padding-bottom: 24px;
+        font-size: 22px;
+      }
+    }
+  }
+
+  &__item {
+    padding: 32px 40px;
+    background-color: #ffffff;
+    border-radius: 28px;
+
+    + .machine-faq__item {
+      margin-top: 24px;
+    }
+
+    h4 {
+      padding-bottom: 24px;
+      font-size: 28px;
+      line-height: 1.4;
+      border-bottom: 1px solid #DDDDDD;
+    }
+
+    p {
+      padding-top: 24px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .block {
+      display: block;
+      font-weight: 700;
+    }
+
+    .bold {
+      font-weight: 700;
+    }
+
+    .img-explain-content {
+      display: block;
+      width: 100%;
+      margin-top: 32px;
+      padding-top: 67.3%;
+      background: {
+        image: url(../images/machine-faq/img-explain-pc.png);
+        position: 0 0;
+        size: cover;
+        repeat: no-repeat;
+      }
+    }
+
+    .img-explain-text {
+      padding: 24px 60px 0;
+    }
+
+
+    @media screen and (max-width: 1024px) {
+      padding: 20px;
+      border-radius: 18px;
+
+      + .machine-faq__item {
+        margin-top: 12px;
+      }
+
+      h4 {
+        padding-bottom: 16px;
+        font-size: 16px;
+      }
+
+      p {
+        padding-top: 20px;
+        font-size: 14px;
+      }
+  
+      .img-explain-content {
+        margin-top: 20px;
+        padding-top: 277%;
+        background: {
+          image: url(../images/machine-faq/img-explain-mo.png);
+        }
+      }
+      .img-explain-text {
+        padding: 12px 0;
+      }
+    }
+  }
+
+  &__more-content {
+    p {
+      color: #767676;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 12px 20px;
+      font-size: 14px;
+      line-height: 1;
+      font-weight: 700;
+      border-radius: 500px;
+      border: 1px solid #000000;
+    }
+
+    @media screen and (max-width: 1024px) {
+      p {
+        font-size: 14px;
+      }
+
+      a {
+        margin-top: 12px;
+      }
+    }
+  }
+
+  &__other-content {
+    margin: 100px 0;
+
+    .center {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #F9F9F9;
+      border-radius: 28px;
+
+      >div {
+        width: 50%;
+        text-align: center;
+      }
+    }
+
+    h3 {
+      font-size: 32px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    p {
+      margin-top: 16px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+
+    .links {
+      margin-top: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+
+      a {
+        display: inline-block;
+        padding: 12px 16px;
+        font-size: 16px;
+        line-height: 1.4;
+        font-weight: 700;
+        border: 1px solid #000000;
+        border-radius: 500px;
+      }
+    }
+
+    .img-content {
+      display: block;
+      width: 50%;
+      padding-top: 27.3%;
+      border-radius: 28px;
+      background: {
+        image: url(../images/machine-faq/img-other-pc.png);
+        position: 0 0;
+        size: cover;
+        repeat: no-repeat;
+      }
+    }
+
+    @media screen and (max-width: 1024px) {
+      margin: 40px 0 195px;
+
+      .img-content {
+        width: 100%;
+        padding-top: 58.5%;
+        background: {
+          image: url(../images/machine-faq/img-other-mo.png);
+        }
+      }
+
+      .center {
+        flex-direction: column;
+        margin: 0 16px;
+        border-radius: 50px 50px 28px 28px;
+  
+        >div {
+          width: 100%;
+          padding: 20px 16px 40px;
+          text-align: center;
+        }
+      }
+  
+      h3 {
+        font-size: 18px;
+      }
+  
+      p {
+        margin-top: 8px;
+        font-size: 14px;
+        letter-spacing: -.5px;
+      }
+  
+      .links {
+        margin-top: 20px;
+        flex-direction: column;
+        gap: 8px;
+        
+  
+        a {
+          display: block;
+          width: 100%;
+          max-width: 298px;
+        }
+      }
+    }
+  }
+}
