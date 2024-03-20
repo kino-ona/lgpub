@@ -1,5 +1,6 @@
 node_modules
 .DS_Store
+/src/assets/css/*.css
 dist/**/*.html
 dist/assets/css
 dist/assets/js
