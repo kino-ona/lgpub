@@ -246,6 +246,7 @@ $gray :#444444;
     }
 
     &__desc {
+      position: relative;
       margin-top: 8px;
       color: $gray;
       font-size: 16px;
@@ -352,17 +353,17 @@ $gray :#444444;
       }
     }
 
-    @for $i from 1 to 4 {
-      &__item:nth-child(#{$i}){
+    @for $j from 1 to 4 {
+      &__item:nth-child(#{$j}){
         background: {
-          image: url('../images/refrigerator40years/img_content_2_' +  $i +'.png');
+          image: url(../images/refrigerator40years/img_content_2_#{$j}.png);
           repeat: no-repeat;
           size: cover;
         }
 
         @media screen and (max-width: 1024px) {
           background: {
-            image: url('../images/refrigerator40years/img_content_2_' +  $i +'.png');
+            image: url(../images/refrigerator40years/img_content_2_#{$j}_mo.png);
           }
         }
       }
@@ -509,6 +510,19 @@ $gray :#444444;
         font-size: 14px;
         border: 1px solid $black;
       }
+    }
+  }
+
+  .superscript {
+    display: inline-block;
+    position: absolute;
+    margin-left: -9px;
+    margin-top: -5px;
+    color: $gray;
+
+    @media screen and (max-width: 1200px) {
+      margin-top: -4px;
+      margin-left: -10px;
     }
   }
 }
