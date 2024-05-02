@@ -964,6 +964,12 @@ body {
         &.mo {
           padding: 24px 24px 32px;
 
+          &.active {
+            .more__wrap {
+              display: block;
+            }
+          }
+
           button {
             margin-top: 6px;
             display: block;
@@ -987,7 +993,6 @@ body {
 
           .more__wrap {
             display: none;
-
             p {
               margin: 16px 0 8px;
               padding-top: 16px;
@@ -1006,16 +1011,6 @@ body {
             position: unset;
             width: 100%;
             margin-top: 20px;
-          }
-
-          &.active {
-            .more__button {
-              display: none;
-            }
-
-            .more__wrap {
-              display: block;
-            }
           }
         }
       }
