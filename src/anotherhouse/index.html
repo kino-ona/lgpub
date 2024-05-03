@@ -342,6 +342,10 @@
               $(this).text('더보기');
             }
           });
+
+          $('.more__read').on('click', function() {
+            $('.main-sub .sub__desc').addClass('active');
+          });
         }
 
         makeSwiper();
