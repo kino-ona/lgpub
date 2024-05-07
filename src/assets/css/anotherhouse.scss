@@ -635,20 +635,16 @@ body {
           font-size: 14px;
           font-weight: 400;
         }
-      }
 
-      .product-swiper-mo {
-        .swiper-slide {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          grid-gap: 24px 12px;
-          width: 100%;
+        @media screen and (max-width: 1024px) {
+          width: 150px;
 
           img {
-            height: unset;
+            height: 150px;
           }
 
           .other__title {
+            padding-top: 12px;
             font-size: 14px;
           }
 
@@ -656,29 +652,44 @@ body {
             font-size: 12px;
           }
         }
+      }
 
-        .swiper-pagination {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 8px;
+      .swiper-pagination {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        margin-top: 40px;
+
+        .swiper-pagination-bullet {
+          width: 8px;
+          height: 8px;
+          background: rgba(0, 0, 0, 0.2);
+          border-radius: 50%;
+          transition: all 0.15s ease-in-out;
+
+          &-active {
+            width: 24px;
+            border-radius: 20px;
+            background: #000;
+          }
+        }
+
+        @media screen and (max-width: 1024px) {
           margin-top: 30px;
+          gap: 8px;
 
           .swiper-pagination-bullet {
             width: 6px;
             height: 6px;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 50%;
-            transition: all 0.15s ease-in-out;
 
             &-active {
               width: 20px;
-              border-radius: 20px;
-              background: #000;
             }
           }
         }
       }
+
 
       .swiper-scrollbar {
         height: 2px;
@@ -701,6 +712,9 @@ body {
     }
 
     .anotherhouse {
+      padding-left: 0;
+      padding-right: 0;
+
       .sub__content {
         width: 100%;
         display: flex;
@@ -759,7 +773,6 @@ body {
         }
 
         h4 {
-          margin: 4px 0 32px;
           font-size: 30px;
           font-weight: 700;
           line-height: 42px;
@@ -767,6 +780,8 @@ body {
 
         span {
           &:nth-of-type(1) {
+            display: block;
+            margin: 4px 0 32px;
             color: $green;
             font-size: 16px;
             font-weight: 500;
@@ -825,14 +840,13 @@ body {
           }
 
           span {
+            margin-bottom: 0;
             font-size: 14px;
             line-height: 22.4px;
             font-weight: 500;
           }
 
           .more__wrap {
-            display: none;
-
             p {
               margin: 16px 0 8px;
               padding-top: 16px;
