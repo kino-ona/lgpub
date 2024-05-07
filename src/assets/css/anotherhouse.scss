@@ -637,10 +637,10 @@ body {
         }
 
         @media screen and (max-width: 1024px) {
-          width: 150px;
+          width: calc(50% - 6px);
 
           img {
-            height: 150px;
+            height: unset;
           }
 
           .other__title {

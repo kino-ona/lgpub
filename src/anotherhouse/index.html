@@ -221,7 +221,13 @@
             slidesPerView: 'auto',
             direction: 'horizontal',
             grabCursor: 'true',
-            spaceBetween: 20,
+            spaceBetween: 12,
+
+            breakpoints: {
+              1024: {
+                spaceBetween: 20,
+              }
+            },
             
             pagination: {
               el: '.swiper-pagination',
