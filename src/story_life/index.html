@@ -100,6 +100,7 @@
               <div>
                 <span class="model__title">LG 엑스붐 360</span>
                 <span class="model__number">RP4BE</span>
+                <!--240507 가격내용 삭제 ( <span class="model__price">869,000원</span> )-->
                 <a href="https://www.lge.co.kr/home-audio/rp4be" target="_blank">제품 보러가기</a>
               </div>
             </div>
@@ -129,6 +130,7 @@
         </div>
         <div class="sub content center products">
           <h3>함께하면 좋은 제품</h3>
+          <!--240507 pc, mo 나눠진 부분 하나로 합쳐짐, swiper-scrollbar 삭제-->
           <div class="swiper product-swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
@@ -176,33 +178,30 @@
             </div>
             <div class="swiper-pagination"></div>
           </div>
+          <!--//240507 pc, mo 나눠진 부분 하나로 합쳐짐, swiper-scrollbar 삭제-->
         </div>
         <div class="sub content center lifezip">
           <div class="sub__content">
             <div class="lifezip__img">
               <img src="../assets/images/story_life/img_lifezip.jpg" alt="라이프집 이미지">
             </div>
-            <div class="lifezip__desc pc">
-              <a href="#" target="_blank">라이프집 바로가기<i></i></a>
+            <!--240507 pc, mo 나눠져있는 부분 하나로, <span class="block"> 넣으면 span 태그 기준 줄바꿈 -->
+            <div class="lifezip__desc">
               <h4>라이프집</h4>
-              <span>나만의 우주를 만드는 집스터들을 위한 함께 성장하는 커뮤니티.</span>
-              <p>구해줘, 라이프집</p>
-              <span>집스터가 원하는 완벽한 공간을 가지실 수 있도록, 그리고 그 곳에서 무엇이든 할 수 있도록.</span>
-              <span>집스터만의 지니인 라이프집사가 이뤄드립니다.</span>
-            </div>
-            <div class="lifezip__desc mo">
-              <h4>라이프집</h4>
-              <span>나만의 우주를 만드는 집스터들을 위한<br/>함께 성장하는 커뮤니티.</span>
-              <div class="more__wrap">
-                <p>구해줘, 라이프집</p>
-                <span>
-                  집스터가 원하는 완벽한 공간을 가지실 수 있도록,<br/>
-                  그리고 그 곳에서 무엇이든 할 수 있도록.<br/>
-                  집스터만의 지니인 라이프집사가 이뤄드립니다.
-                </span>
-              </div>
+              <span class="lifezip__sub-title">
+                <span class="block">나만의 우주를 만드는 집스터들을 위한</span>
+                <span class="block">함께 성장하는 커뮤니티.</span>
+              </span>
+              <p>구해줘, 라이프집</p><!--240507 ZIP.UP 프로젝트 -> 구해줘, 라이프집 -->
+              <span class="lifezip__other-text">
+                <span class="block">집스터가 원하는 완벽한 공간을 가지실 수 있도록,
+                  그리고 그 곳에서 무엇이든 할 수 있도록.</span>
+                <span class="block">집스터만의 지니인 라이프집사가 이뤄드립니다.</span>
+              </span>
+              <!--240507  <button type="button" class="more__button">더보기</button> 삭제 -->
               <a href="#" target="_blank">라이프집 바로가기<i></i></a>
             </div>
+            <!--//240507 pc, mo 나눠져있는 부분 하나로, <span class="block"> 넣으면 span 태그 기준 줄바꿈 -->
           </div>
         </div>
         <div class="sub content center tag">
@@ -259,6 +258,7 @@
     </div>
     <script defer src="../assets/js/swiper-bundle.min.js"></script>
     <script>
+      //240507 script 내용 부분 삭제, 복사해서 엎어주세요
       $(document).ready(function () {
         var delay = 300;
         var timer = null;

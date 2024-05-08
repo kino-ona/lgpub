@@ -8,6 +8,7 @@ $greenLight: #80d42c;
 $green: #70BE22;
 $textHighlight: #FFE1AD;
 $textGray: #666666;
+$descriptionColor: #FF5C00;
 
 body {
   overflow: hidden;
@@ -743,6 +744,10 @@ body {
         background: #F5F5F5;
         letter-spacing: -.4px;
 
+        @media screen and (max-width: 1024px) {
+          padding: 24px 24px 92px;
+        }
+
         a {
           display: flex;
           align-items: center;
@@ -770,30 +775,28 @@ body {
               repeat: no-repeat;
             };
           }
+          @media screen and (max-width: 1024px) {
+            top: auto;
+            left: 24px;
+            right: 24px;
+            bottom: 32px;
+            width: auto;
+            font-size: 14px;
+            font-weight: 500;
+            border-bottom: 1px solid $black;
+          }
         }
 
         h4 {
           font-size: 30px;
           font-weight: 700;
           line-height: 42px;
-        }
 
-        span {
-          &:nth-of-type(1) {
-            display: block;
-            margin: 4px 0 32px;
-            color: $green;
-            font-size: 16px;
-            font-weight: 500;
-            line-height: 25.6px;
-          }
-
-          &:not(:nth-of-type(1)) {
-            display: block;
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 25.6px;
-            color: $textGray;
+          @media screen and (max-width: 1024px) {
+            margin: 0 0 4px;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 28px;
           }
         }
 
@@ -801,6 +804,7 @@ body {
           position: relative;
           margin-bottom: 8px;
           padding-top: 32px;
+          color: $black;
           font-size: 16px;
           font-weight: 700;
           line-height: 22.4px;
@@ -814,58 +818,66 @@ body {
             height: 1px;
             background: #DDDDDD;
           }
+
+          @media screen and (max-width: 1024px) {
+            padding-top: 16px;
+            font-size: 14px;
+            line-height: 19.6px;
+          }
         }
-      
-        &.mo {
-          padding: 24px 24px 32px;
+      }
 
-          &.active {
-            .more__wrap {
-              display: block;
-            }
-          }
+      &__sub-title {
+        display: inline-block;
+        margin: 4px 0 32px;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 25.6px;
 
-          button {
-            margin-top: 6px;
+        .block {
+          display: inline-block;
+          color: $greenLight;
+        }
+
+        
+        .block + .block {
+          margin-top: 0;
+        }
+
+        @media screen and (max-width: 1024px) {
+          margin-bottom: 16px;
+
+          .block {
             display: block;
-            font-size: 14px;
-            font-weight: 500;
-            border-bottom: 1px solid $black;
           }
-          h4 {
-            margin: 0 0 4px;
-            font-size: 20px;
-            font-weight: 700;
-            line-height: 28px;
-          }
+        }
+      }
 
-          span {
-            margin-bottom: 0;
-            font-size: 14px;
-            line-height: 22.4px;
-            font-weight: 500;
-          }
+      &__other-text {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25.6px;
 
-          .more__wrap {
-            p {
-              margin: 16px 0 8px;
-              padding-top: 16px;
-              font-size: 14px;
-              line-height: 19.6px;
-            }
-            
-            span {
-              color: $textGray;
-              font-weight: 400;
-              line-height: 22.4px;
-            }
-          }
+        .block {
+          display: block;
+          color: $textGray;
 
-          a {
-            position: unset;
-            width: 100%;
-            margin-top: 20px;
+          @media screen and (max-width: 1024px) {
+            width: 312px;
+            white-space: pre-line;  
           }
+        }
+
+        .block + .block {
+          margin-top: 0;
+        }
+
+
+        @media screen and (max-width: 1024px) {
+          font-size: 14px;
+          line-height: 22.4px;
+          font-weight: 500
         }
       }
     }
