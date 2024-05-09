@@ -705,10 +705,15 @@ body {
         gap: 16px;
         width: initial;
         min-width: 312px;
-        top: -226px;
+        top: unset;
+        bottom: 254px;
         left: 50%;
         transform: translateX(-50%);
         padding: 20px 16px;
+      }
+
+      @media screen and (max-width: 332px) {
+        bottom: 278px;
       }
     }
 
