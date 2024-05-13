@@ -967,6 +967,10 @@ body {
         background: #F5F5F5;
         letter-spacing: -.4px;
 
+        .block {
+          font-weight: 400;
+        }
+
         @media screen and (max-width: 1024px) {
           padding: 24px 24px 92px;
         }
