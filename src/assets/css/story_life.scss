@@ -389,6 +389,77 @@ body {
     }
 
     .side {
+      position: relative;
+      padding: 60px 0;
+      background-color: $gray;
+      margin-bottom: 80px;
+
+      @media screen and (max-width: 1024px){
+        padding: 40px 0;
+        margin-bottom: 40px;
+      }
+
+      &::before,
+      &::after {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $gray;
+        content :'';
+      }
+
+      &::before {
+        left: -100%;
+      }
+
+      &::after {
+        right: -100%;
+      }
+
+      .content {
+        &__type {
+          color: $white;
+
+          &::after {
+            display: none;
+          }
+        }
+
+        &__title {
+          color: $white;
+        }
+      }
+
+      .tap {
+        &__buttons {
+          background-color: $white;
+        }
+
+        &__container img{
+          opacity: 0;
+          transition: .5s all ease;
+
+          &:nth-child(1) {
+            opacity: 1;
+          }
+        }
+      }
+
+      button{
+        color: $gray;
+        transition: .3s all ease;
+
+        &:nth-child(1) {
+          color: $white;
+        }
+      }
+
+      .move-button {
+        transform: translateX(0);
+        background-color: $gray;
+      }
+
       .pc {
         display: flex;
         align-items: center;
@@ -403,100 +474,25 @@ body {
         box-sizing: border-box;
       }
 
-      &.bg-type1 {
-        background-color: $gray;
-        margin-bottom: 80px;
-
-        &::before,
-        &::after {
-          background-color: $gray;
-        }
-
-        .content {
-          &__type {
-            color: $white;
-  
-            &::after {
-              display: none;
-            }
-          }
-  
-          &__title {
-            color: $white;
-          }
-        }
-
-        .tap__buttons {
-          background-color: $white;
-        }
-
-        button{
-          color: $gray;
-
-          &:nth-child(1) {
-            color: $white;
-          }
-        }
-
-        .tap__container img{
-          opacity: 0;
-
-          &:nth-child(1) {
-            opacity: 1;
-          }
-        }
-
-        .move-button {
-          transform: translateX(0);
-          background-color: $gray;
-        }
-      }
-
-      &.bg-type2 {
-        background-color: $white;
-
-        &::before,
-        &::after {
-          background-color: $white;
-        }
-
-        .content {
-          &__type {
-            color: $black;
-  
-            &::after {
-              background-color: $black;
-            }
-          }
-  
-          &__title {
-            color: $black;
-          }
-        }
-
-        .tap__buttons {
-          background-color: $gray;
-        }
-
-        button{
-          color: $white;
-
-          &:nth-child(2) {
-            color: $black;
-          }
-        }
-
-        .tap__container img{
-          opacity: 0;
-
-          &:nth-child(2) {
-            opacity: 1;
-          }
-        }
-
+      &.bg-type {
         .move-button {
           transform: translateX(100px);
-          background-color: $white;
+        }
+
+        .tap button {
+          &:nth-child(1) {
+            color: $gray;
+          }
+
+          &:nth-child(2) {
+            color: $white;
+          }
+        }
+
+        .tap__container img{
+          &:nth-child(2) {
+            opacity: 1;
+          }
         }
       }
 
@@ -561,9 +557,7 @@ body {
       }
     }
 
-    .bg-yellow,
-    .bg-type1,
-    .bg-type2 {
+    .bg-yellow{
       position: relative;
       padding: 60px 0;
 
@@ -593,12 +587,6 @@ body {
       }  
     }
 
-    .bg-type1,
-    .bg-type2 {
-      @media screen and (max-width: 1024px) {
-        margin: 0 auto 48px !important;
-      }
-    }
 
     .bg-yellow {
       background-color: #F0ECE4;
