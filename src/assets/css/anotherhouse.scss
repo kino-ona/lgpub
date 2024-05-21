@@ -14,6 +14,17 @@ body {
   overflow: hidden;
 }
 
+.ellipis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; 
+}
+
 .lg-story {
   margin: 0 auto;
 
@@ -581,19 +592,10 @@ body {
             .block + .block {
               margin-top: 18px;
             }
-
-            &::after {
-              content: '';
-              position: absolute;
-              left: 0;
-              bottom: 0;
-              width: 100%;
-              height: 150px;
-              background-image: linear-gradient(to bottom, transparent 0%, $white 100%);
-            }
           }
 
           .more__read {
+            display: none;
             position: absolute;
             left: 50%;
             bottom: 24px;
@@ -619,17 +621,29 @@ body {
               color: transparent;
               font-size: 0;
             }
+
+            &::after {
+              display: none;
+            }
           }
 
           &.active {
-            flex: 1;
+            flex: auto;
+            height: 250px;
+            overflow: hidden;
 
             &::after {
-              display: none; 
+              content: '';
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              padding: 48px 0px 48px 0px;
+              background-image: linear-gradient(to bottom, transparent 0%, $white 100%);
             }
 
             .more__read {
-              display: none !important;
+              display: block !important;
             }
           }
         }
@@ -670,6 +684,7 @@ body {
 
     .products {
       align-items: flex-start;
+      gap: 20px;
       
       h3 {
         font-size: 24px;
@@ -686,6 +701,7 @@ body {
         img {
           width: 100%;
           height: 300px;
+          border-radius: 16px;
         }
 
         .other__title {
@@ -1097,10 +1113,10 @@ body {
       }
 
       .swiper-slide {
-        padding-right: 15px;
+        padding: 0 7.5px;
 
         @media screen and (max-width: 1024px) {
-          padding-right: 16px;
+          padding: 0 7.5px;
         }
       }
 

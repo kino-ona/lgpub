@@ -88,7 +88,8 @@
               건조까지 해줘서 아주 편리했다. 옷이 워낙 많다 보니 갖고 싶은 가전 중에 1순위로 등극했다.
             </span>
 
-            <button type="button" class="more__read mo">
+            <!-- 240520 수정사항 > button 태그에 mo 클래스 삭제-->
+            <button type="button" class="more__read">
               <span>더보기 버튼</span>
             </button>
           </p>
@@ -100,6 +101,9 @@
         <div class="swiper product-swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
+              <!-- 240520 수정사항 > 
+                제품과 스토리 간 이동은 창 내에서 이동 -> a태그 안 target="_blank" 값 제거 
+                외부사이트로 이동 시 새창 열기로 변경해주세요. ->  a태그 안 target="_blank" 값 추가 -->
               <a href="#" target="_blank">
                 <img src="../assets/images/anotherhouse/img_product_1.jpg" alt="함께하면 좋은 제품 이미지" />
                 <span class="other__title">LG 디오스 오브제컬렉션 광파오븐</span>
@@ -178,12 +182,15 @@
         <div class="swiper image-swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
+              <!-- 240520 수정사항 > 
+                제품과 스토리 간 이동은 창 내에서 이동 -> a태그 안 target="_blank" 값 제거 
+                외부사이트로 이동 시 새창 열기로 변경해주세요. ->  a태그 안 target="_blank" 값 추가 -->
               <a href="https://anotherhouse.kr/view?type=zipup_project_solution_s4&bid=24541" target="_blank">
                 <img src="../assets/images/anotherhouse/img_item_1.jpg" alt="안성강생이집3 이미지" />
                 <span class="other__type">
                   <span>안성강생이집</span>
                 </span>
-                <span class="other__title">강아지, 박격포의 집</span>
+                <span class="other__title ellipis">강아지, 박격포의 집</span> <!-- 240520 수정사항 > 말줄임용 ellipis 클래스 추가 -->
                 <span class="other__desc">LG 오브제 컬렉션, LG 워시타워</span>
               </a>
             </div>
@@ -193,7 +200,7 @@
                 <span class="other__type">
                   <span>월령바당집</span>
                 </span>
-                <span class="other__title">다음에 꼭 만날 수 있기를</span>
+                <span class="other__title ellipis">다음에 꼭 만날 수 있기를</span> <!-- 240520 수정사항 > 말줄임용 ellipis 클래스 추가 -->
                 <span class="other__desc">LG 오브제 컬렉션, LG 워시타워</span>
               </a>
             </div>
@@ -203,7 +210,7 @@
                 <span class="other__type">
                   <span>하천바람집밖거리</span>
                 </span>
-                <span class="other__title">요리와 음식을 좋아하는 당신을 위해</span>
+                <span class="other__title ellipis">요리와 음식을 좋아하는 당신을 위해</span> <!-- 240520 수정사항 > 말줄임용 ellipis 클래스 추가 -->
                 <span class="other__desc">LG 오브제 컬렉션, LG 워시타워</span>
               </a>
             </div>
@@ -215,7 +222,10 @@
 
   <script defer src="../assets/js/swiper-bundle.min.js"></script>
   <script>
+    //240520 수정사항 > script 부분 덮어주세요
     $(document).ready(function () {
+      var timer = null;
+
       if ($('.products .product-swiper-mo .swiper-slide').length > 1) {
         $(this).find('.swiper-pagination').show();
       } else {
@@ -262,21 +272,28 @@
       }
 
       function moreButton() {
-        $('.more__button').on('click', function () {
-          $(this).closest('.anotherhouse__desc.mo').toggleClass('active');
-
-          if ($(this).closest('.anotherhouse__desc.mo').hasClass('active')) {
-            $(this).text('접기');
-          } else {
-            $(this).text('더보기');
-          }
-        });
-
         $('.more__read').on('click', function () {
-          $('.main-sub .sub__desc').addClass('active');
+          $('.main-sub .sub__desc').removeClass('active');
         });
       }
 
+      function resizeCheck() {
+        if (window.innerWidth <= 431) {
+          $('.main-sub .sub__desc').addClass('active');
+        }
+
+        $(window).on('resize', function () {
+          if (window.innerWidth <= 1024 && $('.main-sub .sub__desc').height() > 250) {
+            $('.main-sub .sub__desc').addClass('active');
+          }
+
+          if (window.innerWidth >= 431) {
+            $('.main-sub .sub__desc').removeClass('active');
+          }
+        })
+      }
+
+      resizeCheck();
       makeSwiper();
       moreButton();
     })
