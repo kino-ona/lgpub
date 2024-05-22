@@ -222,14 +222,30 @@
 
   <script defer src="../assets/js/swiper-bundle.min.js"></script>
   <script>
-    //240520 수정사항 > script 부분 덮어주세요
+    //240522 수정사항 > script 부분 덮어주세요
     $(document).ready(function () {
       var timer = null;
+      var productSlideLength = $('.products .swiper-slide').length;
 
-      if ($('.products .product-swiper-mo .swiper-slide').length > 1) {
-        $(this).find('.swiper-pagination').show();
+      //더보기 버튼 action
+      if (window.innerWidth <= 431) {
+        $('.main-sub .sub__desc').addClass('active');
+      }
+
+      //제품 컨텐츠 slide 체크 및 페이지네이션 none block 여부
+      if (window.innerWidth <= 1024) {
+        //tablet, mo 사이즈
+        if (productSlideLength > 2 ) {
+          $('.products .swiper-pagination').show();
+        } else {
+          $('.products .swiper-pagination').hide();
+        }
       } else {
-        $(this).find('.swiper-pagination').hide();
+        if (productSlideLength > 4 ) {
+          $('.products .swiper-pagination').show();
+        }else {
+          $('.products .swiper-pagination').hide();
+        }
       }
 
       function makeSwiper() {
@@ -278,11 +294,8 @@
       }
 
       function resizeCheck() {
-        if (window.innerWidth <= 431) {
-          $('.main-sub .sub__desc').addClass('active');
-        }
-
         $(window).on('resize', function () {
+           //더보기 버튼 action
           if (window.innerWidth <= 1024 && $('.main-sub .sub__desc').height() > 250) {
             $('.main-sub .sub__desc').addClass('active');
           }
@@ -290,6 +303,24 @@
           if (window.innerWidth >= 431) {
             $('.main-sub .sub__desc').removeClass('active');
           }
+          //더보기 버튼 action
+
+          //제품 컨텐츠 slide 체크 및 페이지네이션 none block 여부
+          if (window.innerWidth <= 1024) {
+            //tablet, mo 사이즈
+            if (productSlideLength > 2 ) {
+              $('.products .swiper-pagination').show();
+            } else {
+              $('.products .swiper-pagination').hide();
+            }
+          } else {
+            if (productSlideLength > 4 ) {
+              $('.products .swiper-pagination').show();
+            }else {
+              $('.products .swiper-pagination').hide();
+            }
+          }
+        //제품 컨텐츠 slide 체크 및 페이지네이션 none block 여부
         })
       }
 

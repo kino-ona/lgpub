@@ -185,7 +185,7 @@
                 <span class="other__desc">Q342GCB153S</span>
               </a>
             </div>
-            <div class="swiper-slide">
+            <!-- <div class="swiper-slide">
               <a href="#" target="_blank">
                 <img src="../assets/images/story_life/img_product_3.jpg" alt="제품 이미지" />
                 <span class="other__title">LG 힐링미 오브제컬렉션 안마의자</span>
@@ -198,7 +198,7 @@
                 <span class="other__title">LG</span>
                 <span class="other__desc">Q342GCB153S</span>
               </a>
-            </div>
+            </div> -->
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -285,16 +285,49 @@
   </div>
   <script defer src="../assets/js/swiper-bundle.min.js"></script>
   <script>
-    //240517 script 부분 덮어주세요
+   //240522 수정사항 > script 부분 덮어주세요
     $(document).ready(function () {
       var timer = null;
       var sideContentTimer = null;
       var count = 0;
+      var productSlideLength = $('.products .swiper-slide').length;
 
-      if ($('.products .product-swiper-mo .swiper-slide').length > 1) {
-        $(this).find('.swiper-pagination').show();
+
+      //제품 컨텐츠 slide 체크 및 페이지네이션 none block 여부
+      if (window.innerWidth <= 1024) {
+        //tablet, mo 사이즈
+        if (productSlideLength > 2 ) {
+          $('.products .swiper-pagination').show();
+        } else {
+          $('.products .swiper-pagination').hide();
+        }
       } else {
-        $(this).find('.swiper-pagination').hide();
+        if (productSlideLength > 4 ) {
+          $('.products .swiper-pagination').show();
+        }else {
+          $('.products .swiper-pagination').hide();
+        }
+      }
+
+
+      function resizeCheck() {
+        //제품 컨텐츠 slide 체크 및 페이지네이션 none block 여부
+        $(window).on('resize', function () {
+          if (window.innerWidth <= 1024) {
+            //tablet, mo 사이즈
+            if (productSlideLength > 2 ) {
+              $('.products .swiper-pagination').show();
+            } else {
+              $('.products .swiper-pagination').hide();
+            }
+          } else {
+            if (productSlideLength > 4 ) {
+              $('.products .swiper-pagination').show();
+            }else {
+              $('.products .swiper-pagination').hide();
+            }
+          }
+        })
       }
 
       function tapButtonAction() {
@@ -339,6 +372,7 @@
         });
       }
 
+      resizeCheck();
       tapButtonAction();
       makeSwiper();
     })
