@@ -329,7 +329,7 @@ body {
           }
         }
 
-        & + .quote__desc {
+        & + .quote__content {
           margin-top: 12px;
 
           @media screen and (max-width: 1024px){
@@ -399,7 +399,6 @@ body {
         line-height: 1.6;
         font-weight: 400;
         letter-spacing: -0.4px;
-        word-break: keep-all;
 
         @media screen and (max-width: 1024px) {
           font-size: 12px;
@@ -590,6 +589,10 @@ body {
         gap: 16px;
         text-align: left;
         align-items: center;
+
+        @media screen and (max-width: 1024px) {
+          gap: 8px;
+        }
 
         i {
           width: 60px;
@@ -930,10 +933,9 @@ body {
 
     .tag {
       align-items: flex-end;
-      padding-bottom: 80px;
 
       @media screen and (max-width: 1024px) {
-        padding-bottom: 40px;
+        padding-bottom: 0
       }
 
       &__wrap {
