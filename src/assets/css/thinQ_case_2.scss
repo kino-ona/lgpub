@@ -9,6 +9,7 @@ $textHighlight: #FFE1AD;
 $textGray: #666666;
 $lightGray: #DDDDDD;
 $quoteBgColor: #EDF3F8;
+$otherBgColor: #F5F5F5;
 $typeBgColor: #F5F5F5;
 
 body {
@@ -835,7 +836,7 @@ body {
     .bg-yellow {
       position: relative;
       padding: 60px 0;
-      background-color: #F0ECE4;
+      background-color: $otherBgColor;
 
       @media screen and (max-width: 1024px) {
         padding: 48px 0;
@@ -852,7 +853,7 @@ body {
         top: 0;
         width: 100%;
         height: 100%;
-        background-color: #F0ECE4;
+        background-color: $otherBgColor;
       }
 
       &::before {
