@@ -1125,5 +1125,48 @@ body {
         padding: 48px 0 40px;
       }
     }
+
+    .hidden-info {
+      display: none;
+      margin-top: 24px;
+
+      &__title {
+        font-size: 16px;
+        line-height: 1.6;
+        letter-spacing: -0.64px;
+        font-weight: 700;
+
+        & + p {
+          margin-top: 8px;
+        }
+      }
+
+      &__sub {
+        font-size: 16px;
+        line-height: 1.6;
+        letter-spacing: -0.64px;
+        color: $textGray;
+
+        & + p {
+          margin-top: 8px;
+        }
+      }
+
+      &.active {
+        display: block;
+      }
+
+      @media screen and (max-width: 1024px) {
+        margin-top: 20px;
+
+        &__title {
+          font-size: 12px;
+        }
+
+        &__sub {
+          font-size: 12px;
+        }
+      }
+    }
   }
 }
