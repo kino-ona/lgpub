@@ -34,6 +34,8 @@ body {
     margin: auto;
   }
 
+  //공통 사용 class
+  // width 1260 일때
   .center {
     width: 100%;
     max-width: 1260px;
@@ -45,7 +47,7 @@ body {
       box-sizing: border-box;
     }
   }
-
+  // width 720 일때
   .center-small {
     width: 100%;
     max-width: 720px;
@@ -58,24 +60,32 @@ body {
     }
   }
 
+  // pc에서만 show
+  .pc {
+    display: block;
+
+    @media screen and (max-width: 1024px) {
+      display: none !important;
+    }
+  }
+
+  // mo에서만 show
+  .mo {
+    display: none !important;
+
+    @media screen and (max-width: 1024px) {
+      display: block !important;
+    }
+  }
+  
+  //flex 들어간 부분
   .flex {
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .break {
-    display: block;
-
-    @media screen and (max-width: 1024px) {
-      display: inline;
-    }
-  }
-
-  .block {
-    display: block;
-  }
-
+  //각 컨텐츠 간의 공통 간격
   .content {
     & + .content {
       margin-top: 80px;
@@ -93,20 +103,18 @@ body {
     }
   }
 
-  .pc {
+  //pc에서는 줄바꿈, mo에서는 줄바꿈 없애는
+  .break {
     display: block;
 
     @media screen and (max-width: 1024px) {
-      display: none !important;
+      display: inline;
     }
   }
 
-  .mo {
-    display: none !important;
-
-    @media screen and (max-width: 1024px) {
-      display: block !important;
-    }
+  //pc, mo에서 줄바꿈 없음
+  .block {
+    display: block;
   }
 
   &__head-content {
@@ -235,7 +243,6 @@ body {
       }
     }
   }
-
 
   &__detail-content {
     padding-top: 80px;

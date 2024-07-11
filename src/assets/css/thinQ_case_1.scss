@@ -4,7 +4,7 @@ $white :#ffffff;
 $gray  :#222222;
 $lightGray: #DDDDDD;
 $black :#000000;
-$descriptionColor: hwb(1 18% 1%);
+$descriptionColor: #FD312E;
 $textGray: #666666;
 $quoteBgColor: #EDF3F8;
 $otherBgColor: #F5F5F5;
@@ -33,6 +33,7 @@ body {
     margin: auto;
   }
 
+  //공통 사용 class
   // width 1260 일때
   .center {
     width: 100%;
@@ -77,6 +78,75 @@ body {
       display: block !important;
     }
   }
+
+  //flex 들어간 부분
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  //각 컨텐츠 간의 공통 간격
+  .content {
+    & + .content {
+      margin-top: 80px;
+
+      @media screen and (max-width: 1024px){
+        margin-top: 40px;
+      }
+    }
+
+    &__wrap {
+      @media screen and (max-width: 1024px){
+        max-width: 360px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  //pc에서는 줄바꿈, mo에서는 줄바꿈 없애는 
+  .break {
+    display: block;
+
+    @media screen and (max-width: 1024px) {
+      display: inline;
+    }
+  }
+
+  //pc, mo에서 줄바꿈 없음
+  .block {
+    display: block;
+  }
+
+  //bg color width 100% 다 채워야할때
+  .bg-color{
+    position: relative;
+
+    @media screen and (max-width: 1024px) {
+      &::before, &::after {
+        display: none;
+      }
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      content: '';
+    }
+
+    &::before {
+      left: -100%;
+    }
+
+    &::after {
+      right: -100%;
+    }  
+  }
+  // //공통 사용 class
+
 
   &__head-content {
     position: relative;
@@ -212,73 +282,6 @@ body {
       padding-top: 40px;
     }
     
-    //flex 들어간 부분
-    .flex {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    //각 컨텐츠 간의 공통 간격
-    .content {
-      & + .content {
-        margin-top: 80px;
-
-        @media screen and (max-width: 1024px){
-          margin-top: 40px;
-        }
-      }
-
-      &__wrap {
-        @media screen and (max-width: 1024px){
-          max-width: 360px;
-          margin: 0 auto;
-        }
-      }
-    }
-
-    //pc에서는 줄바꿈, mo에서는 줄바꿈 없애는 
-    .break {
-      display: block;
-
-      @media screen and (max-width: 1024px) {
-        display: inline;
-      }
-    }
-
-    //pc, mo에서 줄바꿈 없음
-    .block {
-      display: block;
-    }
-
-    //bg color width 100% 다 채워야할때
-    .bg-color{
-      position: relative;
-
-      @media screen and (max-width: 1024px) {
-        &::before, &::after {
-          display: none;
-        }
-      }
-
-      &::before,
-      &::after {
-        position: absolute;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        content: '';
-      }
-
-      &::before {
-        left: -100%;
-      }
-
-      &::after {
-        right: -100%;
-      }  
-    }
-
     //인용문구
     .quote {
       padding: 52px 40px;
@@ -419,6 +422,230 @@ body {
 
         @media screen and (max-width: 1024px) {
           font-size: 10px;
+        }
+      }
+    }
+
+    .explain {
+      text-align: center;
+
+      &__header {
+        img {
+          width: 100%;
+
+          @media screen and (max-width: 1024px) {
+            width: calc(100% + 48px);
+            margin: 0 -24px;
+          }
+        }
+
+        & +.explain__content {
+          margin: 80px 0;
+          
+          @media screen and (max-width: 1024px) {
+            margin: 40px 0;
+          }
+        }
+      }
+
+      &__type-image {
+        & +.explain__wrap {
+          margin-top: 24px;
+        }
+      }
+
+
+      &__type {
+        color: $textGray;
+        font-size: 14px;
+        line-height: 1.4;
+        font-weight: 500;
+        letter-spacing: .56px;
+
+        @media screen and (max-width: 1024px) {
+          font-size: 12px;
+        }
+
+        + .explain__sub-title {
+          margin-top: 2px;
+        }
+      }
+
+      &__detail {
+        color: $textGray;
+        font-size: 14px;
+        line-height: 1.4;
+        letter-spacing: -.56px;
+
+        @media screen and (max-width: 1024px) {
+          font-size: 12px;
+        }
+
+        + .explain__title {
+          margin-top: 2px;
+        }
+      }
+
+      &__sub-title {
+        color: $black;
+        font-size: 20px;
+        line-height: 1.4;
+        font-weight: 700;
+        letter-spacing: -.8px;
+
+        @media screen and (max-width: 1024px) {
+          font-size: 17px;
+        }
+
+        + .explain__desc {
+          margin-top: 12px;
+
+          @media screen and (max-width: 1024px) {
+            margin-top: 8px;
+          }
+        }
+      }
+
+      &__desc {
+        color: $gray;
+        font-size: 18px;
+        line-height: 1.8;
+        font-weight: 400;
+        letter-spacing: -.72px;
+
+        @media screen and (max-width: 1024px) {
+          font-size: 14px;
+        }
+
+        + img {
+          margin-top: 24px;
+        }
+      }
+
+      &__type-image {
+        width: 316px;
+
+        & + .explain__title {
+          margin-top: 24px;
+        }
+      }
+
+      &__title {
+        color: $black;
+        font-size: 32px;
+        line-height: 1.4;
+        font-weight: 700;
+        letter-spacing: -.28px;
+
+        @media screen and (max-width: 1024px) {
+          font-size: 20px;
+        }
+
+        + .explain__desc {
+          margin-top: 12px;
+
+          @media screen and (max-width: 1024px) {
+            margin-top: 8px;
+          }
+        }
+      }
+
+      &__item {
+        + .explain__item {
+          margin-top: 80px;
+
+          @media screen and (max-width: 1024px) {
+            margin-top: 40px;
+          }
+        }
+      }
+    }
+
+    .list {
+      display: grid;
+      margin-top: 40px;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+
+      @media screen and (max-width: 1024px) {
+        margin-top: 30px;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      li {
+        padding: 32px 24px;
+        min-height: 256px;
+        background-color: $typeBgColor;
+
+        @media screen and (max-width: 1024px) {
+          padding: 16px 20px;
+          min-height: auto;
+        }
+      }
+
+      &__header {
+        display: flex;
+        gap: 16px;
+        text-align: left;
+        align-items: center;
+
+        i {
+          width: 60px;
+          height: 60px;
+          background: {
+            size: contain;
+            position: center;
+            repeat: no-repeat;
+          };
+        }
+
+        & + .list__content {
+          margin-top: 24px;
+
+          @media screen and (max-width: 1024px) {
+            margin-top: 12px;
+          }
+        }
+      }
+
+      &__type {
+        color: $textGray;
+        font-size: 14px;
+        line-height: 1.4;
+        letter-spacing: -.56px;
+
+        @media screen and (max-width: 1024px) {
+          font-size: 12px;
+        }
+
+        + .list__title {
+          margin-top: 2px;
+        }
+      }
+
+      &__title {
+        color: $black;
+        font-size: 20px;
+        line-height: 1.4;
+        font-weight: 700;
+        letter-spacing: -.8px;
+
+        @media screen and (max-width: 1024px) {
+          font-size: 17px;
+        }
+      }
+
+      &__content {
+        color: $gray;
+        font-size: 16px;
+        line-height: 1.8;
+        text-align: left;
+        letter-spacing: -.64px;
+        word-break: auto-phrase;
+
+        @media screen and (max-width: 1024px) {
+          font-size: 12px;
         }
       }
     }
