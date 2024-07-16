@@ -1,0 +1,199 @@
+@use './swiper';
+
+$white :#ffffff;
+$gray  :#111111;
+$lightGray: #DDDDDD;
+$black :#000000;
+$designWidth: 1920;
+$calculateDesignWidth: $designWidth / 100;
+
+@mixin calculate-font($fontsize, $type) {
+  //제작된 pc디자인 1920 /6 = 360 모바일 기준이 되는데
+  //디자인 시안에서 폰트/6 을 했을때 너무 작으면 type2 
+  //괜찮으면 type1을 지정해준다
+  $number: if($type == 'type1', 2, 6); // 조건에 따라 $number 변수 설정
+
+  font-size: clamp(#{$fontsize / $number}px, #{$fontsize / $calculateDesignWidth}vw, #{$fontsize}px);
+}
+
+body {
+  overflow: hidden;
+}
+
+.ellipis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; 
+}
+
+.brand-trend {
+  text-align: center;
+  background: $gray url(../images/brend_trend/img_bg.png) 50% 0/100%  no-repeat;
+
+  @media screen and (max-width: 1024px) {
+    max-width: 100%;
+    margin: auto;
+  }
+
+  //공통 사용 class
+  // width 1260 일때 -> 1338으로 수정
+  .center {
+    width: 100%;
+    max-width: 1338px;
+    margin: 0 auto;
+
+    @media screen and (max-width: 1024px) {
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+  }
+
+  // width 720 ->  1200으로 수정
+  .center-small {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @media screen and (max-width: 1024px) {
+      max-width: 100%;
+      margin: auto;
+      box-sizing: border-box;
+    }
+  }
+
+  // pc에서만 show
+  .pc {
+    display: block;
+
+    @media screen and (max-width: 1024px) {
+      display: none !important;
+    }
+  }
+
+  // mo에서만 show
+  .mo {
+    display: none !important;
+
+    @media screen and (max-width: 1024px) {
+      display: block !important;
+    }
+  }
+
+  //flex 들어간 부분
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  //각 컨텐츠 간의 공통 간격
+  .content {
+    & + .content {
+      margin-top: 80px;
+
+      @media screen and (max-width: 1024px){
+        margin-top: 40px;
+      }
+    }
+
+    &__wrap {
+      @media screen and (max-width: 1024px){
+        max-width: 360px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  //pc에서는 줄바꿈, mo에서는 줄바꿈 없애는 
+  .break {
+    display: block;
+
+    @media screen and (max-width: 1024px) {
+      display: inline;
+    }
+  }
+
+  //pc, mo에서 줄바꿈 없음
+  .block {
+    display: block;
+  }
+
+  //bg color width 100% 다 채워야할때
+  .bg-color{
+    position: relative;
+
+    @media screen and (max-width: 1024px) {
+      &::before, &::after {
+        display: none;
+      }
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      content: '';
+    }
+
+    &::before {
+      left: -100%;
+    }
+
+    &::after {
+      right: -100%;
+    }  
+  }
+  // //공통 사용 class
+
+
+  &__head-content {
+    padding-top: 3.2%;
+    
+    .type {
+      color: $white;
+      line-height: 1;
+      font-weight: 700;
+      @include calculate-font(24,'type1');
+    }
+
+    .main-title {
+      padding: 18.2% 0 5.3%;
+      color: $white;
+      line-height: 1.1;
+      letter-spacing: -.5px;
+      font-weight: 400;
+      @include calculate-font(92,'type2');
+
+
+      span {
+        display: inline-block;
+        font-weight: 700;
+      }
+    }
+
+    .sub-title { 
+      &__header {
+        padding-bottom: 5.3%;
+        color: $white;
+        line-height: 1.5;
+        letter-spacing: -.5px;
+        @include calculate-font(40,'type2');
+      }
+    }
+
+    .movie {
+      padding-top: 56.3%;
+      background-color: $white;
+    }
+  }
+
+  &__detail-content {
+   
+  }
+}
