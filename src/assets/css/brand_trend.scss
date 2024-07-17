@@ -10,15 +10,17 @@ $calculateDesignWidth: math.div($designWidth, 100);
 
 @mixin calculate-font($fontsize, $type) {
   //제작된 pc디자인 1920 /6 = 360 모바일 기준이 되는데
-  //디자인 시안에서 폰트/6 을 했을때 너무 작으면 type2 
-  //괜찮으면 type1을 지정해준다
-  $number: if($type == 'type1', 2, 6); // 조건에 따라 $number 변수 설정
+  //디자인 시안에서 폰트/6 을 했을때 너무 작으면 type1
+  //괜찮으면 type2을 지정해준다
+  $number: if($type == 'type1', 3, 6); // 조건에 따라 $number 변수 설정
+  $dividFontSize: math.floor(math.div($fontsize, $number));
+  $setFontSize: if($dividFontSize < 10, 10, $dividFontSize);
 
-  font-size: clamp(
-    #{math.floor(math.div($fontsize, $number))}px,
-    #{math.floor(math.div($fontsize, $calculateDesignWidth))}vw,
-    #{math.floor($fontsize)}px
-  );
+  font-size: #{math.floor($fontsize)}px;
+
+  @media screen and (max-width: 1024px) {
+    font-size:  #{$setFontSize}px,
+  }
 }
 
 body {
@@ -194,7 +196,7 @@ body {
         color: $white;
         line-height: 1.5;
         letter-spacing: -.5px;
-        @include calculate-font(40,'type2');
+        @include calculate-font(40,'type1');
       }
     }
 
@@ -215,7 +217,7 @@ body {
           line-height: 1.3;
           font-weight: 400;
           font-size: 54px;
-          @include calculate-font(54, 'type1');
+          @include calculate-font(54, 'type2');
 
           span {
             font-weight: 700;
@@ -245,7 +247,7 @@ body {
         text-align: left;
         color: $white;
         @include calculate-font(60, 'type1');
-        font-size: 60px;
+        // font-size: 60px;
 
         span {
           display: inline-block;
@@ -263,7 +265,7 @@ body {
         letter-spacing: -0.5px;
         text-align: left;
         @include calculate-font(36, 'type1');
-        font-size: 36px;
+        // font-size: 36px;
       }
 
       &__desc {
@@ -278,3 +280,4 @@ body {
     }
   }
 }
+
