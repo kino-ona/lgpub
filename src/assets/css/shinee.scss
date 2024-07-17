@@ -103,6 +103,12 @@
 				letter-spacing: -0.4px;
 			}
 		}
+
+		.kv {
+			&__bg {
+				background-image: url("../images/shinee/bg_kv01.jpg");
+			}
+		}
 	}
 
 	.character {
@@ -124,19 +130,32 @@
 						&__character {
 							background-image: url("../images/shinee/character0#{$i}.svg");
 						}
+
+						&__name {
+							background-image: url("../images/shinee/character_name0#{$i}.svg");
+						}
 					}
 				}
 			}
+		}
+
+		&__name {
+			width: 96px;
+			height: 60px;
+			margin: 0 auto;
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			background-position: 0 0;
 		}
 
 		&__character {
 			background-size: 100% 100%;
 			background-repeat: no-repeat;
 			background-position: 0 0;
-			height: 240px;
+			aspect-ratio: 1;
 		}
 
-		&__name {
+		&__text {
 			font-weight: 500;
 			margin-top: 16px;
 			font-size: 14px;
@@ -236,6 +255,18 @@
 		}
 	}
 
+	.collabo-swiper {
+		&:not(:first-child) {
+			margin-top: 60px;
+		}
+
+		.swiper {
+			&-bottom {
+				position: absolute;
+			}
+		}
+	}
+
 	.product {
 		&:not(:first-child) {
 			margin-top: 60px;
@@ -262,12 +293,12 @@
 			text-align: center;
 			margin-top: 20px;
 			font-weight: 700;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			display: -webkit-box;
-			-webkit-line-clamp: 2;
-			-webkit-box-orient: vertical;
 			height: 76px;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 2;
 		}
 
 		&__sn {
@@ -299,5 +330,306 @@
 	}
 
 	@media screen and (max-width: 1024px) {
+		.section {
+			padding-top: 52px;
+			padding-bottom: 52px;
+		}
+
+		.title {
+			font-size: 20px;
+			letter-spacing: 0;
+			line-height: 1.4;
+
+			&:not(:last-child) {
+				margin-bottom: 8px;
+			}
+
+			&--secondary {
+				font-size: 16px;
+				letter-spacing: -0.32px;
+			}
+		}
+
+		.desc {
+			font-size: 14px;
+			letter-spacing: -0.28px;
+
+			&:not(:last-child) {
+				margin-bottom: 8px;
+			}
+		}
+
+		.img {
+			&--rounded {
+				img {
+					border-radius: 18px;
+				}
+			}
+		}
+
+		.kv {
+			padding-top: 100%;
+
+			&:not(:first-child) {
+				margin-top: 24px;
+			}
+
+			&:not(:last-child) {
+				margin-bottom: 24px;
+			}
+		}
+
+		.collabo {
+			.title {
+				&:first-child {
+					font-size: 16px;
+					letter-spacing: -0.32px;
+				}
+
+				&:nth-child(2) {
+					font-size: 22px;
+					line-height: 1.4;
+					letter-spacing: 0;
+				}
+
+				&:nth-of-type(3) {
+					font-size: 16px;
+					letter-spacing: -0.32px;
+
+					&:not(:last-child) {
+						margin-bottom: 16px;
+					}
+				}
+			}
+
+			.kv {
+				margin-left: -20px;
+				margin-right: -20px;
+				&__bg {
+					border-radius: 0;
+					background-image: url("../images/shinee/m_bg_kv01.jpg");
+				}
+			}
+		}
+
+		.character {
+			padding: 0;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 16px 48px;
+
+			&__item {
+				display: flex;
+				flex-direction: column;
+				width: 100px;
+
+				&:nth-child(odd) {
+					margin-left: auto;
+				}
+			}
+
+			&__text {
+				font-size: 12px;
+				margin-top: 8px;
+				letter-spacing: 0.24px;
+			}
+		}
+
+		.grid-item {
+			&:not(:first-child) {
+				margin-top: 24px;
+			}
+
+			&__grid {
+				display: block;
+
+				.img {
+					&:not(:first-child) {
+						margin-top: 32px;
+					}
+				}
+
+				.group {
+					padding: 16px 0 0;
+
+					&:nth-child(2n) {
+						.title,
+						.desc {
+							text-align: center;
+						}
+					}
+
+					&:nth-child(4n) {
+						.title,
+						.desc {
+							text-align: center;
+						}
+					}
+
+					.title {
+						line-height: 1.3;
+						letter-spacing: 0;
+					}
+
+					.desc {
+						line-height: 1.4;
+					}
+				}
+			}
+		}
+
+		.goods {
+			&__list {
+				display: block;
+			}
+
+			&__item {
+				&:not(:first-child) {
+					margin-top: 12px;
+				}
+
+				.goods {
+					&__inner {
+						display: flex;
+						clip-path: inset(0 round 18px);
+
+						.img {
+							width: 140px;
+						}
+					}
+
+					&__bottom {
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						flex: 1;
+						padding: 0 16px;
+					}
+				}
+			}
+		}
+
+		.collabo-swiper {
+			&:not(:first-child) {
+				margin-top: 24px;
+			}
+
+			.swiper {
+				&-bottom {
+					position: static;
+					margin-top: 22px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					column-gap: 16px;
+				}
+
+				&-pagination {
+					display: flex;
+					column-gap: 12px;
+
+					&-bullet {
+						width: 8px;
+						height: 8px;
+						background-color: #aaa;
+						border-radius: 50%;
+
+						&-active {
+							width: 22px;
+							border-radius: 6px;
+							background-color: #ea1917;
+						}
+					}
+				}
+
+				&-control {
+					width: 16px;
+					height: 16px;
+					background-repeat: no-repeat;
+					background-position: 0 0;
+					background-size: 100% 100%;
+
+					&.stop {
+						background-image: url("../images/shinee/btn_swiper_stop.svg");
+					}
+
+					&.play {
+						background-image: url("../images/shinee/btn_swiper_play.svg");
+					}
+				}
+
+				&-button-prev,
+				&-button-next {
+					width: 28px;
+					height: 28px;
+					position: absolute;
+					top: 50%;
+					z-index: 1;
+					margin-top: -14px;
+					background-repeat: no-repeat;
+					background-position: 0 0;
+					background-size: 100% 100%;
+				}
+
+				&-button-prev {
+					left: 20px;
+					background-image: url("../images/shinee/btn_swiper_prev.svg");
+				}
+
+				&-button-next {
+					right: 20px;
+					background-image: url("../images/shinee/btn_swiper_next.svg");
+				}
+
+				&-button-disabled {
+					opacity: 0.5;
+				}
+			}
+		}
+
+		.product {
+			&:not(:first-child) {
+				margin-top: 24px;
+			}
+
+			&__mask {
+				margin: 0 -20px;
+			}
+
+			&__row {
+				padding: 20px;
+				overflow-x: auto;
+				justify-content: flex-start;
+				margin: -20px 0;
+			}
+
+			&__item {
+				flex: none;
+				width: 280px;
+				padding: 24px 40px 32px;
+				border-radius: 18px;
+			}
+
+			&__name {
+				font-size: 16px;
+				letter-spacing: -0.32px;
+				height: 51px;
+				margin-top: 8px;
+			}
+
+			&__sn {
+				font-size: 12px;
+				letter-spacing: -0.24px;
+			}
+
+			&__button {
+				a {
+					font-size: 13px;
+					line-height: 1.6;
+					letter-spacing: -0.26px;
+					padding: 8px 24px;
+				}
+			}
+		}
 	}
 }
