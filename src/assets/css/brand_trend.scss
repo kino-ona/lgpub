@@ -1,11 +1,12 @@
 @use './swiper';
+@use 'sass:math';
 
 $white :#ffffff;
 $gray  :#111111;
 $lightGray: #DDDDDD;
 $black :#000000;
 $designWidth: 1920;
-$calculateDesignWidth: $designWidth / 100;
+$calculateDesignWidth: math.div($designWidth, 100);
 
 @mixin calculate-font($fontsize, $type) {
   //제작된 pc디자인 1920 /6 = 360 모바일 기준이 되는데
@@ -13,7 +14,11 @@ $calculateDesignWidth: $designWidth / 100;
   //괜찮으면 type1을 지정해준다
   $number: if($type == 'type1', 2, 6); // 조건에 따라 $number 변수 설정
 
-  font-size: clamp(#{$fontsize / $number}px, #{$fontsize / $calculateDesignWidth}vw, #{$fontsize}px);
+  font-size: clamp(
+    #{math.floor(math.div($fontsize, $number))}px,
+    #{math.floor(math.div($fontsize, $calculateDesignWidth))}vw,
+    #{math.floor($fontsize)}px
+  );
 }
 
 body {
