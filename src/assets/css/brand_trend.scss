@@ -8,15 +8,15 @@ $black :#000000;
 $designWidth: 1920;
 $calculateDesignWidth: math.div($designWidth, 100);
 
-@mixin calculate-font($fontsize, $type) {
+@mixin calculate-font($fontSize, $type) {
   //제작된 pc디자인 1920 /6 = 360 모바일 기준이 되는데
   //디자인 시안에서 폰트/6 을 했을때 너무 작으면 type1
-  //괜찮으면 type2을 지정해준다
+  //괜찮으면 type2를 지정해준다
   $number: if($type == 'type1', 3, 6); // 조건에 따라 $number 변수 설정
-  $dividFontSize: math.floor(math.div($fontsize, $number));
+  $dividFontSize: math.floor(math.div($fontSize, $number));
   $setFontSize: if($dividFontSize < 10, 10, $dividFontSize);
 
-  font-size: #{math.floor($fontsize)}px;
+  font-size: #{math.floor($fontSize)}px;
 
   @media screen and (max-width: 1024px) {
     font-size:  #{$setFontSize}px,
@@ -228,10 +228,39 @@ body {
       &__content {
       }
 
+      &__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       &__item {
-        gap: 4.5%;
+        grid-column: span 2;
         align-items: flex-start;
         justify-content: space-between;
+        gap: 4.5%;
+
+        &:nth-child(n + 3) {
+          grid-column: span 1;
+        }
+
+        &--long + .brand__item--long {
+          flex-direction: row-reverse;
+        }
+
+        &--half {
+          flex-direction: column;
+          justify-content: flex-start;
+          gap: unset;
+
+          .brand__decoration {
+            order: 1;
+            width: 100%;
+          }
+
+          .brand__type {
+            padding-top: 0;
+          }
+        }
       }
 
       &__decoration {
@@ -242,12 +271,12 @@ body {
       }
 
       &__type {
-        padding-top: 5.8%;
+        padding-top: calc(100vw * (80 / 1920));
         position: relative;
         text-align: left;
+        line-height: 1.2;
         color: $white;
         @include calculate-font(60, 'type1');
-        // font-size: 60px;
 
         span {
           display: inline-block;
@@ -260,16 +289,16 @@ body {
 
       &__title {
         color: $white;
-        padding-top: 8.5%;
+        padding-top: calc(100vw * (115 / 1920));
         line-height: 1.3;
         letter-spacing: -0.5px;
         text-align: left;
-        @include calculate-font(36, 'type1');
+        @include calculate-font(36, 'type2');
         // font-size: 36px;
       }
 
       &__desc {
-        padding-top: 4.4%;
+        padding-top: calc(100vw * (60 / 1920));
         line-height: 1.5;
         letter-spacing: -0.5px;
         text-align: left;
