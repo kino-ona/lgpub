@@ -76,6 +76,10 @@ body {
     }
   }
 
+  .line-two {
+    min-height: 208px;
+  }
+
   // pc에서만 show
   .pc {
     display: block;
@@ -209,7 +213,7 @@ body {
   &__detail-content {
     .brand {
       &__header {
-        padding-bottom: 5%;
+        padding-bottom: calc(100vw * (115) / 1920);
 
         h3 {
           color: $white;
@@ -225,22 +229,24 @@ body {
         }
       }
 
-      &__content {
-      }
-
       &__list {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        column-gap: calc(100vw * (60 / 1920));
       }
 
       &__item {
         grid-column: span 2;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 4.5%;
+        align-items: center;
+        justify-content: center;
+        gap: calc(100vw * (60 / 1920));
 
         &:nth-child(n + 3) {
           grid-column: span 1;
+        }
+
+        & + .brand__item {
+          padding-top: calc(100vw * (115 / 1920));
         }
 
         &--long + .brand__item--long {
@@ -252,26 +258,38 @@ body {
           justify-content: flex-start;
           gap: unset;
 
+          .brand__wrap {
+            width: 100%;
+          }
+
           .brand__decoration {
             order: 1;
             width: 100%;
           }
 
-          .brand__type {
-            padding-top: 0;
+          .brand__desc {
+            padding: calc(100vw * (60 / 1920)) 0 calc(100vw * (70 / 1920));
           }
         }
       }
 
       &__decoration {
-        width: 59.8%;
-        padding-top: 37.4%;
+        width: calc(100vw * (800 / 1920));;
+        
+        padding-top: calc(100vw * (500 / 1920));
         background: #ccc;
         border-radius: 30px;
       }
 
+      &__wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        height: 100%;
+      }
+
       &__type {
-        padding-top: calc(100vw * (80 / 1920));
         position: relative;
         text-align: left;
         line-height: 1.2;
