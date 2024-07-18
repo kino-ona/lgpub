@@ -3,6 +3,10 @@
 .shinee {
 	line-height: 1.6;
 
+	.break-mobile {
+		display: inline;
+	}
+
 	.section {
 		padding: 140px 20px;
 
@@ -21,6 +25,7 @@
 		letter-spacing: -0.64px;
 		text-align: center;
 		font-weight: 700;
+		line-height: 1.2;
 
 		&:not(:last-child) {
 			margin-bottom: 16px;
@@ -180,6 +185,7 @@
 				}
 
 				.img {
+					height: 100%;
 					margin-bottom: 0;
 
 					img {
@@ -345,6 +351,10 @@
 	}
 
 	@media screen and (max-width: 1024px) {
+		.break-mobile {
+			display: block;
+		}
+
 		.section {
 			padding-top: 52px;
 			padding-bottom: 52px;
@@ -363,6 +373,10 @@
 				font-size: 16px;
 				letter-spacing: -0.32px;
 			}
+
+			br {
+				display: none;
+			}
 		}
 
 		.desc {
@@ -371,6 +385,10 @@
 
 			&:not(:last-child) {
 				margin-bottom: 8px;
+			}
+
+			br {
+				display: none;
 			}
 		}
 
@@ -460,7 +478,7 @@
 
 				.figure {
 					&:not(:first-child) {
-						margin-top: 32px;
+						margin-top: 40px;
 					}
 
 					.video {
