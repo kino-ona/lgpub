@@ -91,6 +91,10 @@
 			background-size: cover;
 			border-radius: 20px;
 			height: 100%;
+
+			&--mobile {
+				display: none;
+			}
 		}
 	}
 
@@ -102,12 +106,6 @@
 				font-size: 20px;
 
 				letter-spacing: -0.4px;
-			}
-		}
-
-		.kv {
-			&__bg {
-				background-image: url("../images/shinee/bg_kv01.jpg");
 			}
 		}
 	}
@@ -409,6 +407,16 @@
 
 			&:not(:last-child) {
 				margin-bottom: 24px;
+			}
+
+			&__bg {
+				&--desktop {
+					display: none;
+				}
+
+				&--mobile {
+					display: block;
+				}
 			}
 		}
 
