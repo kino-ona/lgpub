@@ -20,19 +20,19 @@
   <div class="brand-trend">
     <section class="brand-trend__head-content">
       <h1></h1>
-      <p class="type">트렌드</p>
-      <h2 class="main-title">
+      <p class="type animate__animated animate__fadeIn">트렌드</p>
+      <h2 class="main-title animate__animated animate__fadeIn ani-delay2">
         <span>공간</span>을 <span>확장</span>하다.<br/>
         <span>미래</span>를 <span>연결</span>하다.
       </h2>
       <div class="sub-title">
-        <p class="sub-title__header">
+        <p class="sub-title__header animate__animated animate__fadeIn ani-delay3">
           LG전자는<br/>
           당신의 삶이 있는 모든 공간과<br class="mo"/> 경험을 연결하고 확장합니다.<br/>
           끊임없는 혁신으로 무한히 연결될<br class="mo"/>새로운 미래를 경험해보세요.
         </p>
         <div class="sub-title__content center-small">
-          <div class="movie"></div>
+          <div class="movie animate__animated animate__fadeInUp"></div>
         </div>
       </div>
     </section>
@@ -40,7 +40,7 @@
       <div class="content center brand">
         <div class="content__wrap">
           <div class="brand__header">
-            <h3>
+            <h3 class="animate__animated animate__fadeIn">
               모든 공간과 경험을<br class="mo"/> 최적의 솔루션으로 연결하는<br/>
               <span>LG전자의 사업영역</span>을<br class="mo"/> 소개합니다.
             </h3>
@@ -128,7 +128,7 @@
               </li>
               <li class="brand__item brand__item--half flex">
                 <div class="brand__decoration">
-                  <img src="" alt="LG Labs 컨텐츠 이미지"/>
+                  <img src="../assets/images/brend_trend/img_content_01.png" alt="LG Labs 컨텐츠 이미지"/>
                 </div>
                 <div class="brand__wrap">
                   <h4 class="brand__type">
@@ -148,7 +148,7 @@
               </li>
               <li class="brand__item brand__item--half flex">
                 <div class="brand__decoration">
-                  <img src="" alt="ESG 컨텐츠 이미지"/>
+                  <img src="../assets/images/brend_trend/img_content_02.png" alt="ESG 컨텐츠 이미지"/>
                 </div>
                 <div class="brand__wrap">
                   <h4 class="brand__type">
@@ -184,48 +184,57 @@
                 <div class="info__wrap">
                   <p class="info__title">
                     LG전자 뉴스룸
-                    <span class="icon-decorative" aria-hidden="true" style="background-image: url();">
+                    <span class="icon-decorative" aria-hidden="true" style="background-image: url(../assets/images/brend_trend/ico_sns_01.png);">
                       <span class="sr-only">LG전자 뉴스룸 아이콘</span>
                     </span>
                   </p>
-                  <a href="/" class="info__link">
-                    보러가기
-                  </a>
+                  <a href="/" class="info__link">보러가기</a>
                 </div>
               </li>
               <li class="info__item">
                 <div class="info__wrap">
                   <p class="info__title">
                     LG전자 유튜브
-                    <span class="icon-decorative" aria-hidden="true" style="background-image: url();">
+                    <span class="icon-decorative" aria-hidden="true" style="background-image: url(../assets/images/brend_trend/ico_sns_02.png);">
                       <span class="sr-only">LG전자 유튜브 아이콘</span>
                     </span>
                   </p>
-                  <a href="/" class="info__link">
-                    보러가기
-                  </a>
+                  <a href="/" class="info__link">보러가기</a>
+                </div>
+              </li>
+              <li class="info__item">
+                <div class="info__wrap">
+                  <p class="info__title">
+                    LG전자 인스타그램
+                    <span class="icon-decorative" aria-hidden="true" style="background-image: url(../assets/images/brend_trend/ico_sns_03.png);">
+                      <span class="sr-only">LG전자 인스타그램 아이콘</span>
+                    </span>
+                  </p>
+                  <a href="/" class="info__link">보러가기</a>
                 </div>
               </li>
             </ul>
-            <li class="info__item">
-              <div class="info__wrap">
-                <p class="info__title">
-                  LG전자 인스타그램
-                  <span class="icon-decorative" aria-hidden="true" style="background-image: url();">
-                    <span class="sr-only">LG전자 인스타그램 아이콘</span>
-                  </span>
-                </p>
-                <a href="/" class="info__link">
-                  보러가기
-                </a>
-              </div>
-            </li>
-          </ul>
           </div>
         </div>
       </div>
     </section>
   </div>
+  
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-viewport-checker/1.8.8/jquery.viewportchecker.min.js"></script>
+  <script>
+    $(function () {
+      $('.animate__animated:not(.delay)').viewportChecker({
+        classToAdd: 'on',
+        offset: 100,
+      });
+      
+      $('.animate__animated.delay').viewportChecker({
+        classToAdd: 'on',
+        offset: 125,
+      });
+    });
+  </script>
 </body>
 
 </html>
