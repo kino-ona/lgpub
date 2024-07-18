@@ -77,7 +77,7 @@ body {
   }
 
   .line-two {
-    min-height: 208px;
+    min-height: calc(100vw * (208 / 1920));
   }
 
   // pc에서만 show
