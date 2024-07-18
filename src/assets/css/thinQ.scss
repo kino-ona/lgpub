@@ -441,7 +441,7 @@ body {
       }
     }
 
-    .explain {
+    .detailed-items {
       text-align: center;
 
       &__header {
@@ -576,100 +576,101 @@ body {
       }
     }
 
-    .explain-list {
-      display: grid;
-      margin-top: 40px;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
+    .detailed-items {
+      
+      // display: grid;
+      // margin-top: 40px;
+      // grid-template-columns: 1fr 1fr;
+      // gap: 16px;
 
-      @media screen and (max-width: 1024px) {
-        margin-top: 30px;
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
+      // @media screen and (max-width: 1024px) {
+      //   margin-top: 30px;
+      //   grid-template-columns: 1fr;
+      //   gap: 12px;
+      // }
 
-      >div {
-        padding: 32px 24px;
-        min-height: 256px;
-        background-color: $F5F5F5;
+      // >div {
+      //   padding: 32px 24px;
+      //   min-height: 256px;
+      //   background-color: $F5F5F5;
 
-        @media screen and (max-width: 1024px) {
-          padding: 16px 20px;
-          min-height: auto;
-        }
-      }
+      //   @media screen and (max-width: 1024px) {
+      //     padding: 16px 20px;
+      //     min-height: auto;
+      //   }
+      // }
 
-      &__header {
-        display: flex;
-        gap: 16px;
-        text-align: left;
-        align-items: center;
+      // &__header {
+      //   display: flex;
+      //   gap: 16px;
+      //   text-align: left;
+      //   align-items: center;
 
-        @media screen and (max-width: 1024px) {
-          gap: 8px;
-        }
+      //   @media screen and (max-width: 1024px) {
+      //     gap: 8px;
+      //   }
 
-        i {
-          width: 60px;
-          height: 60px;
-          background: {
-            size: contain;
-            position: center;
-            repeat: no-repeat;
-          };
-        }
+      //   i {
+      //     width: 60px;
+      //     height: 60px;
+      //     background: {
+      //       size: contain;
+      //       position: center;
+      //       repeat: no-repeat;
+      //     };
+      //   }
 
-        & + .explain-list__content {
-          margin-top: 24px;
+      //   & + .explain-list__content {
+      //     margin-top: 24px;
 
-          @media screen and (max-width: 1024px) {
-            margin-top: 12px;
-          }
-        }
-      }
+      //     @media screen and (max-width: 1024px) {
+      //       margin-top: 12px;
+      //     }
+      //   }
+      // }
 
-      &__type {
-        color: $gray666;
-        font-size: 14px;
-        line-height: 1.4;
-        letter-spacing: -.56px;
+      // &__type {
+      //   color: $gray666;
+      //   font-size: 14px;
+      //   line-height: 1.4;
+      //   letter-spacing: -.56px;
 
-        @media screen and (max-width: 1024px) {
-          font-size: 12px;
-        }
+      //   @media screen and (max-width: 1024px) {
+      //     font-size: 12px;
+      //   }
 
-        + .explain-list__title {
-          margin-top: 2px;
-        }
-      }
+      //   + .explain-list__title {
+      //     margin-top: 2px;
+      //   }
+      // }
 
-      &__title {
-        color: $black;
-        font-size: 20px;
-        line-height: 1.4;
-        font-weight: 700;
-        letter-spacing: -.8px;
+      // &__title {
+      //   color: $black;
+      //   font-size: 20px;
+      //   line-height: 1.4;
+      //   font-weight: 700;
+      //   letter-spacing: -.8px;
 
-        @media screen and (max-width: 1024px) {
-          font-size: 17px;
-        }
-      }
+      //   @media screen and (max-width: 1024px) {
+      //     font-size: 17px;
+      //   }
+      // }
 
-      &__content {
-        color: $gray222;
-        font-size: 16px;
-        line-height: 1.8;
-        text-align: left;
-        letter-spacing: -.64px;
-        word-break: auto-phrase;
+      // &__content {
+      //   color: $gray222;
+      //   font-size: 16px;
+      //   line-height: 1.8;
+      //   text-align: left;
+      //   letter-spacing: -.64px;
+      //   word-break: auto-phrase;
 
-        @media screen and (max-width: 1024px) {
-          font-size: 12px;
-        }
-      }
+      //   @media screen and (max-width: 1024px) {
+      //     font-size: 12px;
+      //   }
+      // }
     }
 
-    .list-full {
+    .detailed-items-line {
       div + div {
         margin-top: 80px;
         text-align: left;
