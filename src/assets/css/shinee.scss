@@ -650,20 +650,21 @@
 				margin-top: 24px;
 			}
 
-			&__mask {
-				margin: 0 -20px;
-			}
+			// &__mask {
+			// 	margin: 0 -20px;
+			// }
 
-			&__row {
-				padding: 20px;
-				overflow-x: auto;
-				justify-content: flex-start;
-				margin: -20px 0;
-			}
+			// &__row {
+			// 	padding: 20px;
+			// 	overflow-x: auto;
+			// 	justify-content: flex-start;
+			// 	margin: -20px 0;
+			// }
 
 			&__item {
 				flex: none;
-				width: 280px;
+				// width: 280px;
+				width: 100%;
 				padding: 24px 40px 32px;
 				border-radius: 18px;
 			}
