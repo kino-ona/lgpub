@@ -108,6 +108,12 @@
 				letter-spacing: -0.4px;
 			}
 		}
+
+		.kv {
+			&:not(:last-child) {
+				margin-bottom: 140px;
+			}
+		}
 	}
 
 	.character {
@@ -446,6 +452,11 @@
 			.kv {
 				margin-left: -20px;
 				margin-right: -20px;
+
+				&:not(:last-child) {
+					margin-bottom: 52px;
+				}
+
 				&__bg {
 					border-radius: 0;
 					background-image: url("../images/shinee/m_bg_kv01.jpg");
