@@ -1262,6 +1262,17 @@ body {
 				& + p {
 					margin-top: 8px;
 				}
+				& + .hidden-info__link {
+					margin-top: 8px;
+				}
+			}
+
+			&__link {
+				display: inline-block;
+				font-size: 14px;
+				line-height: 1.6;
+				text-decoration: underline;
+				color: #666;
 			}
 
 			&.active {
