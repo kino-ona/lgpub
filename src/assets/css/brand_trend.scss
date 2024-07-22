@@ -52,7 +52,7 @@ body {
 }
 
 @for $i from 1 through 50 {
-  $delay: $i / 10;
+  $delay: calc($i / 10);
 
   .ani-delay#{$i} {
     animation-delay: #{$delay}s !important;
@@ -64,7 +64,7 @@ body {
 
 .brand-trend {
   text-align: center;
-  background: $gray url(../images/brend_trend/img_bg.png) 50% 0/100%  no-repeat;
+  background: $gray url(../images/brand_trend/img_bg.png) 50% 0/100% no-repeat;
 
   @media screen and (max-width: 1024px) {
     max-width: 100%;
@@ -81,6 +81,7 @@ body {
     @media screen and (max-width: 1024px) {
       max-width: 100%;
       box-sizing: border-box;
+      padding: 0;
     }
   }
 
@@ -98,7 +99,7 @@ body {
   }
 
   .line-two {
-    min-height: calc(100vw * (208 / 1920));
+    flex: 1;
   }
 
   // pc에서만 show
@@ -189,9 +190,10 @@ body {
 
 
   &__head-content {
-    padding-top: 3.2%;
+    padding-bottom: calc(100vw * (70) / 1920);
     
     .type {
+      padding-top: calc(100vw * (70) / 1920);
       color: $white;
       line-height: 1;
       font-weight: 700;
@@ -199,16 +201,12 @@ body {
     }
 
     .main-title {
-      padding: 18.2% 0 5.3%;
+      padding: calc(100vw * (390) / 1920) 0 calc(100vw * (115) / 1920);
       color: $white;
       line-height: 1.1;
       letter-spacing: -.5px;
-      font-weight: 400;
-      font-size: 92px;
-
-      @media screen and (max-width: 1024px) {
-        @include calculate-font(92, 'type1', 24);
-      }
+      font-weight: 300;
+      @include calculate-font(92, 'type2', 24);
 
 
       span {
@@ -218,10 +216,10 @@ body {
     }
 
     .sub-title {
-      padding-bottom: 16%;
+      padding-bottom: calc(100vw * (115) / 1920);
 
       &__header {
-        padding-bottom: 5.3%;
+        padding-bottom: calc(100vw * (115) / 1920);
         color: $white;
         line-height: 1.5;
         letter-spacing: -.5px;
@@ -236,11 +234,15 @@ body {
   }
 
   &__detail-content {
-    padding-bottom: calc(100vw * (115) / 1920);
+    padding: 0 30px calc(100vw * (70) / 1920);
+
+    @media screen and (max-width: 1024px) {
+      padding: 0 0 calc(100vw * (70) / 1920);;
+    }
 
     .brand {
       &__header {
-        padding-bottom: calc(100vw * (115) / 1920);
+        padding-bottom: calc(100vw * (70) / 1920);
 
         h3 {
           color: $white;
@@ -258,12 +260,12 @@ body {
       &__list {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        column-gap: calc(100vw * (60 / 1920));
+        column-gap: calc(100vw * (70 / 1920));
       }
 
       &__item {
         grid-column: span 2;
-        gap: calc(100vw * (60 / 1920));
+        gap: calc(100vw * (70 / 1920));
 
         & + .brand__item {
           padding-top: calc(100vw * (115 / 1920));
@@ -280,26 +282,24 @@ body {
           gap: unset;
 
           .brand__wrap {
+            flex: 1;
             width: 100%;
-            padding-left: calc(100vw * (60 / 1920));
+            padding-left: calc(100vw * (70 / 1920));
           }
 
           .brand__decoration {
             order: 1;
+            flex: unset;
             width: 100%;
           }
 
-          .brand__title {
-            padding-top: calc(100vw * (60 / 1920));
-          }
-
           .brand__desc {
-            padding: calc(100vw * (60 / 1920)) 0 calc(100vw * (70 / 1920));
+            padding-bottom: calc(100vw * (70 / 1920));
           }
 
           @media screen and (max-width: 1024px) {
             grid-column: span 2;
-            gap: calc(100vw * (60 / 1920));
+            gap: calc(100vw * (70 / 1920));
 
             .brand__decoration {
               order: unset;
@@ -314,12 +314,12 @@ body {
 
       &__decoration {
         position: relative;
-        width: calc(100vw * (800 / 1920));
+        flex: 1 1 calc(100vw * (800 / 1920));
         max-width: 800px;
-        padding-top: calc(100vw * (500 / 1920));
         background: #ccc;
         border-radius: 30px;
         overflow: hidden;
+        aspect-ratio: 1.6 / 1;
 
         img {
           position: absolute;
@@ -335,16 +335,15 @@ body {
           max-width: 100%;
           padding-top: 56.3%;
           border-radius: 0;
+          aspect-ratio: unset;
         }
       }
 
       &__wrap {
-        flex: 1;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        justify-content: space-between;
-        height: 100%;
+        justify-content: center;
 
         @media screen and (max-width: 1024px) {
           width: 100%;
@@ -357,15 +356,18 @@ body {
         text-align: left;
         line-height: 1.2;
         color: $white;
-        @include calculate-font(60, 'type1', 22);
+        @include calculate-font(60, 'type2', 22);
 
-        span {
+        &::after {
+          content: '';
           display: inline-block;
           width: calc(100vw * (12 / 1920));
-          height: calc(100vw * (12 / 1920));;
+          height: calc(100vw * (12 / 1920));
+          max-width: 12px;
+          max-height: 12px;
+          margin-left: 6px;
           background: #fd312e;
           border-radius: 50%;
-          transform: translate(calc(100vw * (-12 / 1920)), calc(100vw * (-10 / 1920)));
         }
 
         @media screen and (max-width: 1045px) {
@@ -373,33 +375,40 @@ body {
         }
         @media screen and (max-width: 1024px) {
           white-space: unset;
+
+          &::after {
+            width: 6px;
+            height: 6px;
+          }
         }
       }
 
       &__title {
+        padding: calc(100vw * (70 / 1920)) 0 calc(100vw * (40 / 1920));
         line-height: 1.3;
         letter-spacing: -0.5px;
         text-align: left;
         color: #d5d6da;
+        word-break: keep-all;
         @include calculate-font(36, 'type1', 17);
         
-        
         @media screen and (max-width: 1024px) {
-          padding-top: calc(100vw * (115 / 1920));
+          padding-top: calc(100vw * (70 / 1920));
         }
       }
 
       &__desc {
-        // padding-top: calc(100vw * (60 / 1920));
+        // padding-top: calc(100vw * (50 / 1920));
         line-height: 1.5;
         letter-spacing: -0.5px;
         letter-spacing: calc(100vw * (-0.5 / 1920));
         text-align: left;
         color: #d5d6da;
+        word-break: keep-all;
         @include calculate-font(24, 'type1', 14);
 
         @media screen and (max-width: 1024px) {
-          padding: calc(100vw * (60 / 1920)) 0 calc(100vw * (70 / 1920));
+          padding: calc(100vw * (50 / 1920)) 0 calc(100vw * (70 / 1920));
         }
       }
     }
@@ -446,13 +455,13 @@ body {
       &__item {
         width: 100%;
         background: $white;
-        // padding: calc(100vw * (26) / 1920) 0 calc(100vw * (26) / 1920) calc(100vw * (60) / 1920);
-        padding: 26px 0 26px calc(100vw * (60) / 1920);
+        // padding: calc(100vw * (26) / 1920) 0 calc(100vw * (26) / 1920) calc(100vw * (50) / 1920);
+        padding: 26px 25px 26px 45px;
         border-radius: 30px;
 
         @media screen and (max-width: 1024px) {
           border-radius: 10px;
-          padding: calc(100vw * (26) / 720) calc(100vw * (60) / 720);
+          padding: calc(100vw * (26) / 720) calc(100vw * (50) / 720);
         }
       }
 
@@ -472,10 +481,15 @@ body {
           border-radius: 50%;
           margin-left: calc(100vw * (20) / 1920);
           background: {
+            color: #dadada;
             position: center center;
             repeat: no-repeat;
             size: cover;
           };
+
+          &.instagram {
+            background-position: -0.5px -0.3px;
+          }
 
           @media screen and (max-width: 1024px) {
             width: 30px;
