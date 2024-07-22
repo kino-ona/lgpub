@@ -159,14 +159,6 @@
 			background-position: 0 0;
 			aspect-ratio: 1;
 		}
-
-		&__text {
-			font-weight: 500;
-			margin-top: 16px;
-			font-size: 14px;
-			line-height: 1.2;
-			letter-spacing: -0.28px;
-		}
 	}
 
 	.grid-item {
@@ -480,10 +472,9 @@
 				}
 			}
 
-			&__text {
-				font-size: 12px;
-				margin-top: 8px;
-				letter-spacing: 0.24px;
+			&__name {
+				width: 53.333px;
+				height: 33.333px;
 			}
 		}
 
