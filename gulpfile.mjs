@@ -26,12 +26,12 @@ import gulpSass from "gulp-sass";
 const sass = gulpSass(dartSass);
 
 const paths = {
-		html: "src/**/*.html",
-		scss: "src/assets/css/**/*.scss",
-		js: "src/assets/js/**/*.js",
-		img: "src/assets/images/**/*.{jpg,gif,png,svg}",
-		inc: "src/inc/**/*.inc"
-	},
+	html: "src/**/*.html",
+	scss: "src/assets/css/**/*.scss",
+	js: "src/assets/js/**/*.js",
+	img: "src/assets/images/**/*.{jpg,gif,png,svg}",
+	inc: "src/inc/**/*.inc"
+},
 	dist = {
 		html: "dist",
 		css: "dist/assets/css",
