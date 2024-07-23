@@ -510,7 +510,7 @@ body {
 
 				li {
 					display: flex;
-					align-items: center;
+					align-items: flex-start;
 					gap: 8px;
 					font-size: 16px;
 					line-height: 1.8;
@@ -530,15 +530,17 @@ body {
 							size: cover;
 							repeat: no-repeat;
 						}
+						margin-top: 2px;
 
 						& + p {
+							flex: 1;
 							word-break: keep-all;
 						}
 
 						@media screen and (max-width: 1024px) {
 							width: 20px;
 							height: 20px;
-							margin-top: -3px;
+							margin-top: 3px;
 
 							& + p {
 								flex: 1;
