@@ -429,6 +429,7 @@ body {
         
         @media screen and (max-width: 1024px) {
           padding: calc(100vw * (50 / 1920)) 0 calc(100vw * (70 / 1920));
+          @include calculate-font(24, 'type1', 14);
         }
       }
     }
