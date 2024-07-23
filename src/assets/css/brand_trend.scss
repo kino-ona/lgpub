@@ -330,7 +330,7 @@ body {
 
       &__decoration {
         position: relative;
-        flex: 1 1 calc(100vw * (800 / 1920));
+        flex: 1;
         max-width: 800px;
         background: #ccc;
         border-radius: 30px;
@@ -423,6 +423,10 @@ body {
         word-break: keep-all;
         @include calculate-font(24, 'type1', 14);
 
+        @media screen and (max-width: 1300px) {
+          font-size: clamp(14px, 1.82vw, 24px);
+        }
+        
         @media screen and (max-width: 1024px) {
           padding: calc(100vw * (50 / 1920)) 0 calc(100vw * (70 / 1920));
         }
@@ -566,17 +570,17 @@ body {
 
         @media screen and (max-width: 1024px) {
           // padding: calc(100vw * (12) / 720) calc(100vw * (34) / 720) calc(100vw * (10) / 720) calc(100vw * (16) / 720);
-          padding: 8px calc(100vw * (36) / 720) 8px calc(100vw * (18) / 720);
+          padding: 7px calc(100vw * (36) / 720) 8px calc(100vw * (18) / 720);
 
           &::before {
             right: calc(100vw * (14) / 720);
             width: 7px;
-            margin-top: -0.5px;
+            // margin-top: -0.5px;
           }
           &::after {
             right: calc(100vw * (14) / 720);
             width: 7px;
-            margin-top: 2px;
+            // margin-top: 2px;
           }
         }
       }
