@@ -121,7 +121,6 @@ body {
   .content {
     &__wrap {
       @media screen and (max-width: 1024px){
-        // max-width: 360px;
         margin: 0 auto;
       }
     }
@@ -401,7 +400,6 @@ body {
         text-align: left;
         color: #d5d6da;
         word-break: keep-all;
-        // @include calculate-font(24, 'type1', 14);
         font-size: clamp(14px, 1.8vw, 24px);
         
         @media screen and (max-width: 1024px) {
