@@ -370,10 +370,7 @@
             var count = 0;
             var productSlideLength = $('.products .swiper-slide').length;
 
-
-            //제품 컨텐츠 slide 체크 및 페이지네이션 none block 여부
             if (window.innerWidth <= 1024) {
-                //tablet, mo 사이즈
                 if (productSlideLength > 2) {
                     $('.products .swiper-pagination').show();
                 } else {
@@ -389,10 +386,8 @@
 
 
             function resizeCheck() {
-                //제품 컨텐츠 slide 체크 및 페이지네이션 none block 여부
                 $(window).on('resize', function () {
                     if (window.innerWidth <= 1024) {
-                        //tablet, mo 사이즈
                         if (productSlideLength > 2) {
                             $('.products .swiper-pagination').show();
                         } else {

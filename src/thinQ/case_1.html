@@ -519,9 +519,6 @@
         <div class="swiper image-swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <!-- 240520 수정사항 > 
-                제품과 스토리 간 이동은 창 내에서 이동 -> a태그 안 target="_blank" 값 제거 
-                외부사이트로 이동 시 새창 열기로 변경해주세요. ->  a태그 안 target="_blank" 값 추가 -->
               <a href="https://lifezip.kr/view?type=zipup_project_solution_s4&bid=24541">
                 <img src="../assets/images/thinQ/common/img_other_1.jpg" alt="Zip.up 프로젝트 시즌3 이미지" />
                 <span class="other__type">
@@ -583,7 +580,6 @@
         function resizeCheck() {
           $(window).on('resize', function () {
             if (window.innerWidth <= 1024) {
-              //tablet, mo 사이즈
               if (productSlideLength > 2) {
                 $('.products .swiper-pagination').show();
               } else {
