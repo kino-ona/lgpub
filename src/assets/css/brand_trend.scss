@@ -249,7 +249,7 @@ body {
         gap: calc(100vw * (40 / 1920));
         
         @media screen and (max-width: 1024px) {
-          gap: calc(100vw * (60 / 1920));
+          gap: calc(100vw * (60 / 1920)) !important;
         }
 
         & + .brand__item {
