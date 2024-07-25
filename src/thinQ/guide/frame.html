@@ -12,7 +12,7 @@
 <body>
   <!-- 가이드 파일 복사 후 주석은 삭제 하고 작업 -->
   <!-- body 영역 : CMS에 등록하는 영역 -->
-  <link rel="stylesheet" href="../../assets/css/thinQ.css"><!-- 업로드한 URL로 변경 필요 -->
+  <link rel="stylesheet" href="../../assets/css/thinQ.css">
   <div class="lg-thinQ">
 
 
@@ -264,7 +264,7 @@
       <!-- //다음 이야기 : 기본 공통 영역 소스 지우지 마세요 -->
     </section>
   </div>
-  <script defer src="../../assets/js/swiper-bundle.min.js"></script><!-- 업로드한 URL로 변경 필요 -->
+  <script defer src="../../assets/js/swiper-bundle.min.js"></script>
   <script>
     $(document).ready(function () {
       var timer = null;
@@ -273,9 +273,7 @@
       var productSlideLength = $('.products .swiper-slide').length;
 
 
-      //제품 컨텐츠 slide 체크 및 페이지네이션 none block 여부
       if (window.innerWidth <= 1024) {
-        //tablet, mo 사이즈
         if (productSlideLength > 2) {
           $('.products .swiper-pagination').show();
         } else {
@@ -291,10 +289,8 @@
 
 
       function resizeCheck() {
-        //제품 컨텐츠 slide 체크 및 페이지네이션 none block 여부
         $(window).on('resize', function () {
           if (window.innerWidth <= 1024) {
-            //tablet, mo 사이즈
             if (productSlideLength > 2) {
               $('.products .swiper-pagination').show();
             } else {
