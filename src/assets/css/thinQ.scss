@@ -148,6 +148,11 @@ body {
 		}
 	}
 
+	.top-border {
+		padding-top: 20px;
+		border-top: 1px solid #000;
+	}
+
 	//모바일일때 padding: 0 24 reset
 	.mo-width-full {
 		@media screen and (max-width: 1024px) {
