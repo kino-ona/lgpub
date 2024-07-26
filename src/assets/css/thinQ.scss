@@ -153,6 +153,11 @@ body {
 		border-top: 1px solid #000;
 	}
 
+	.left-indent {
+		margin-left: 10px;
+		text-indent: -10px;
+	}
+
 	//모바일일때 padding: 0 24 reset
 	.mo-width-full {
 		@media screen and (max-width: 1024px) {
@@ -571,6 +576,9 @@ body {
 					@media screen and (max-width: 1024px) {
 						margin-top: 8px;
 						font-size: 12px;
+					}
+					+ .item-paragraph__notes {
+						margin-top: 0;
 					}
 				}
 				& + .item-img {
