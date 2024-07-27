@@ -333,7 +333,7 @@ body {
           display: block;
           width: 20px;
           height: 20px;
-          background: url("../images/thinQ/common/ico_quote.png") 50% 50% /17px 12px no-repeat;
+          background: url("../assets/images/thinQ/common/ico_quote.png") 50% 50% /17px 12px no-repeat;
           content: "";
         }
 
@@ -1060,7 +1060,7 @@ body {
       ul {
         flex: 1;
         overflow: hidden;
-        margin-top: -8px;
+        margin: -8px 0 0 -6px;
         @media screen and (max-width: 1024px) {
           gap: 8px 4px;
           flex-wrap: wrap;
@@ -1069,7 +1069,7 @@ body {
 
         > li {
           display: inline-block;
-          margin-top: 8px;
+          margin: 8px 0 0 6px;
           padding: 12px 20px;
           background-color: $white;
           color: $gray666;
