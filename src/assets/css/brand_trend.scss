@@ -221,8 +221,8 @@ body {
     .movie {
       position: relative;
       padding-top: 56.3%;
-
-      video {
+      
+      iframe, video {
         position: absolute;
         top: 0;
         left: 0;

@@ -38,8 +38,8 @@
           끊임없는 혁신으로 무한히 확장된<br class="mo" /> 미래를 만들고 있습니다.
         </p>
         <div class="sub-title__content center-small">
-          <div class="movie animate__animated animate__fadeIn ani-delay3">
-            <video src="../assets/video/brand_trend/main_video.mp4" muted loop controls>
+          <div class="movie animate__animated animate__fadeIn ani-delay3" >
+            <iframe src="https://www.youtube.com/embed/Uvi8A8Pak24?si=mY9bwJY6eG0_fJcQ&autoplay=1&mute=1&loop=1&playlist=Uvi8A8Pak24" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -117,12 +117,12 @@
               </li>
               <li class="brand__item brand__item--half flex animate__animated animate__fadeInUp">
                 <div class="brand__decoration">
-                  <img src="../assets/images/brand_trend/img_content_04.png" alt="AI 스마트홈 솔루션 컨텐츠 이미지" />
+                  <img src="../assets/images/brand_trend/img_content_04.png" alt="AI홈 솔루션 컨텐츠 이미지" />
 
                   <p class="decoration__txt"><span>공감지능 로봇, Q9</span></p>
                 </div>
                 <div class="brand__wrap">
-                  <h4 class="brand__type">AI 스마트홈 솔루션</h4>
+                  <h4 class="brand__type">AI홈 솔루션</h4>
                   <p class="brand__title">
                     나를 이해하여<br/>
                     공간을 컨트롤하는 공감지능&#40;AI&#41;
@@ -225,8 +225,6 @@
 
   <script>
     $(function () {
-      let mainVideo = $('.movie video');
-
       $('.animate__animated:not(.delay)').viewportChecker({
         classToAdd: 'on',
         offset: 100,
@@ -235,21 +233,6 @@
       $('.animate__animated.delay').viewportChecker({
         classToAdd: 'on',
         offset: 125,
-      });
-
-      $(mainVideo).viewportChecker({
-        classToAdd: 'play',
-        classToRemove: 'play',
-        repeat: true,
-        offset: 100,
-      });
-
-      $(window).on('scroll', function() {
-        if ($(mainVideo).hasClass('play')) {
-          $(mainVideo).get(0).play();
-        } else {
-          $(mainVideo).get(0).pause();
-        }
       });
     });
 
