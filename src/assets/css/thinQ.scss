@@ -22,9 +22,9 @@ body {
 		margin: auto;
 	}
 
-	//공통 사용 class
+	//怨듯넻 �궗�슜 class
 
-	//말줄임
+	//留먯쨪�엫
 	.ellipis {
 		white-space: nowrap;
 		overflow: hidden;
@@ -35,7 +35,7 @@ body {
 		-webkit-box-orient: vertical;
 	}
 
-	// width 1260 일때
+	// width 1260 �씪�븣
 	.center {
 		width: 100%;
 		max-width: 1260px;
@@ -48,7 +48,7 @@ body {
 		}
 	}
 
-	// width 720 일때
+	// width 720 �씪�븣
 	.center-small {
 		width: 100%;
 		max-width: 720px;
@@ -62,7 +62,7 @@ body {
 		}
 	}
 
-	// pc에서만 show
+	// pc�뿉�꽌留� show
 	.pc {
 		display: block;
 
@@ -71,7 +71,7 @@ body {
 		}
 	}
 
-	// mo에서만 show
+	// mo�뿉�꽌留� show
 	.mo {
 		display: none !important;
 
@@ -80,14 +80,14 @@ body {
 		}
 	}
 
-	//flex 들어간 부분
+	//flex �뱾�뼱媛� 遺�遺�
 	.flex {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
 
-	//각 컨텐츠 간의 공통 간격
+	//媛� 而⑦뀗痢� 媛꾩쓽 怨듯넻 媛꾧꺽
 	.content {
 		& + .content {
 			margin-top: 80px;
@@ -105,7 +105,7 @@ body {
 		}
 	}
 
-	//pc에서는 줄바꿈, mo에서는 줄바꿈 없애는
+	//pc�뿉�꽌�뒗 以꾨컮轅�, mo�뿉�꽌�뒗 以꾨컮轅� �뾾�븷�뒗
 	.break {
 		display: block;
 
@@ -114,12 +114,12 @@ body {
 		}
 	}
 
-	//pc, mo에서 줄바꿈 없음
+	//pc, mo�뿉�꽌 以꾨컮轅� �뾾�쓬
 	.block {
 		display: block;
 	}
 
-	//bg color width 100% 다 채워야할때
+	//bg color width 100% �떎 梨꾩썙�빞�븷�븣
 	.bg-color {
 		position: relative;
 
@@ -158,7 +158,7 @@ body {
 		text-indent: -10px;
 	}
 
-	//모바일일때 padding: 0 24 reset
+	//紐⑤컮�씪�씪�븣 padding: 0 24 reset
 	.mo-width-full {
 		@media screen and (max-width: 1024px) {
 			margin: 0 -24px;
@@ -173,7 +173,7 @@ body {
 			background-color: $F5F5F5;
 		}
 	}
-	// //공통 사용 class
+	// //怨듯넻 �궗�슜 class
 
 	&__head-content {
 		position: relative;
@@ -1301,7 +1301,6 @@ body {
 
 			&__link {
 				display: inline-block;
-				font-size: 14px;
 				line-height: 1.6;
 				text-decoration: underline;
 				color: #666;
