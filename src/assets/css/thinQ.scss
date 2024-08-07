@@ -22,9 +22,9 @@ body {
 		margin: auto;
 	}
 
-	//怨듯넻 �궗�슜 class
+	//공통 사용 class
 
-	//留먯쨪�엫
+	//말줄임
 	.ellipis {
 		white-space: nowrap;
 		overflow: hidden;
@@ -35,7 +35,7 @@ body {
 		-webkit-box-orient: vertical;
 	}
 
-	// width 1260 �씪�븣
+	// width 1260 일때
 	.center {
 		width: 100%;
 		max-width: 1260px;
@@ -48,7 +48,7 @@ body {
 		}
 	}
 
-	// width 720 �씪�븣
+	// width 720 일때
 	.center-small {
 		width: 100%;
 		max-width: 720px;
@@ -62,7 +62,7 @@ body {
 		}
 	}
 
-	// pc�뿉�꽌留� show
+	// pc에서만 show
 	.pc {
 		display: block;
 
@@ -71,7 +71,7 @@ body {
 		}
 	}
 
-	// mo�뿉�꽌留� show
+	// mo에서만 show
 	.mo {
 		display: none !important;
 
@@ -80,16 +80,16 @@ body {
 		}
 	}
 
-	//flex �뱾�뼱媛� 遺�遺�
+	//flex 들어간 부분
 	.flex {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
 
-	//媛� 而⑦뀗痢� 媛꾩쓽 怨듯넻 媛꾧꺽
+	//각 컨텐츠 간의 공통 간격
 	.content {
-		& + .content {
+		&+.content {
 			margin-top: 80px;
 
 			@media screen and (max-width: 1024px) {
@@ -105,7 +105,7 @@ body {
 		}
 	}
 
-	//pc�뿉�꽌�뒗 以꾨컮轅�, mo�뿉�꽌�뒗 以꾨컮轅� �뾾�븷�뒗
+	//pc에서는 줄바꿈, mo에서는 줄바꿈 없애는
 	.break {
 		display: block;
 
@@ -114,16 +114,17 @@ body {
 		}
 	}
 
-	//pc, mo�뿉�꽌 以꾨컮轅� �뾾�쓬
+	//pc, mo에서 줄바꿈 없음
 	.block {
 		display: block;
 	}
 
-	//bg color width 100% �떎 梨꾩썙�빞�븷�븣
+	//bg color width 100% 다 채워야할때
 	.bg-color {
 		position: relative;
 
 		@media screen and (max-width: 1024px) {
+
 			&::before,
 			&::after {
 				display: none;
@@ -158,7 +159,7 @@ body {
 		text-indent: -10px;
 	}
 
-	//紐⑤컮�씪�씪�븣 padding: 0 24 reset
+	//모바일일때 padding: 0 24 reset
 	.mo-width-full {
 		@media screen and (max-width: 1024px) {
 			margin: 0 -24px;
@@ -173,7 +174,8 @@ body {
 			background-color: $F5F5F5;
 		}
 	}
-	// //怨듯넻 �궗�슜 class
+
+	// //공통사용 class
 
 	&__head-content {
 		position: relative;
@@ -224,7 +226,7 @@ body {
 			span {
 				position: relative;
 
-				& + span {
+				&+span {
 					padding-left: 13px;
 
 					&::before {
@@ -354,7 +356,7 @@ body {
 					}
 				}
 
-				& + .quote__content {
+				&+.quote__content {
 					margin-top: 12px;
 
 					@media screen and (max-width: 1024px) {
@@ -373,7 +375,8 @@ body {
 				@media screen and (max-width: 1024px) {
 					font-size: 12px;
 				}
-				& + .quote__header {
+
+				&+.quote__header {
 					margin-top: 12px;
 				}
 			}
@@ -413,7 +416,7 @@ body {
 					font-size: 16px;
 				}
 
-				& + .brand__sub-text {
+				&+.brand__sub-text {
 					margin-top: 3px;
 
 					@media screen and (max-width: 1024px) {
@@ -432,7 +435,7 @@ body {
 					font-size: 12px;
 				}
 
-				& + .brand__desc {
+				&+.brand__desc {
 					margin-top: 3px;
 
 					@media screen and (max-width: 1024px) {
@@ -456,7 +459,7 @@ body {
 		.detailed-items {
 			text-align: center;
 
-			.item + .item {
+			.item+.item {
 				margin: 80px 0;
 
 				@media screen and (max-width: 1024px) {
@@ -478,10 +481,11 @@ body {
 						font-size: 12px;
 					}
 
-					+ .item-paragraph__sub-title {
+					+.item-paragraph__sub-title {
 						margin-top: 2px;
 					}
 				}
+
 				&__title {
 					color: $black;
 					font-size: 32px;
@@ -493,7 +497,7 @@ body {
 						font-size: 20px;
 					}
 
-					+ .item-paragraph__desc {
+					+.item-paragraph__desc {
 						margin-top: 12px;
 
 						@media screen and (max-width: 1024px) {
@@ -501,6 +505,7 @@ body {
 						}
 					}
 				}
+
 				&__sub-title {
 					color: $black;
 					font-size: 20px;
@@ -512,7 +517,7 @@ body {
 						font-size: 17px;
 					}
 
-					+ .item-paragraph__desc {
+					+.item-paragraph__desc {
 						margin-top: 12px;
 
 						@media screen and (max-width: 1024px) {
@@ -520,6 +525,7 @@ body {
 						}
 					}
 				}
+
 				&__desc {
 					color: $gray222;
 					font-size: 18px;
@@ -531,18 +537,20 @@ body {
 						font-size: 14px;
 					}
 
-					+ img {
+					+img {
 						margin-top: 24px;
 					}
 				}
+
 				&__type-image {
 					width: 316px;
 
-					& + .item-paragraph__title,
-					& + .item-paragraph__detail {
+					&+.item-paragraph__title,
+					&+.item-paragraph__detail {
 						margin-top: 24px;
 					}
 				}
+
 				&__detail {
 					color: $gray666;
 					font-size: 14px;
@@ -553,20 +561,23 @@ body {
 						font-size: 12px;
 					}
 
-					+ .item-paragraph__title {
+					+.item-paragraph__title {
 						margin-top: 2px;
 					}
 				}
+
 				&__bullet {
 					font-size: 14px;
 					font-weight: 500;
 					line-height: 1.4;
 					color: $gray666;
 					letter-spacing: -0.56px;
+
 					@media screen and (max-width: 1024px) {
 						font-size: 12px;
 					}
 				}
+
 				&__notes {
 					display: block;
 					margin-top: 12px;
@@ -577,11 +588,13 @@ body {
 						margin-top: 8px;
 						font-size: 12px;
 					}
-					+ .item-paragraph__notes {
+
+					+.item-paragraph__notes {
 						margin-top: 0;
 					}
 				}
-				& + .item-img {
+
+				&+.item-img {
 					margin-top: 24px;
 				}
 
@@ -607,8 +620,9 @@ body {
 						margin-right: -24px;
 					}
 				}
-				& + .item-check-list,
-				& + .item-paragraph {
+
+				&+.item-check-list,
+				&+.item-paragraph {
 					margin-top: 40px;
 				}
 			}
@@ -625,7 +639,7 @@ body {
 					gap: 12px;
 				}
 
-				> div {
+				>div {
 					padding: 32px 24px;
 					min-height: 256px;
 					background-color: $F5F5F5;
@@ -649,6 +663,7 @@ body {
 					i {
 						width: 60px;
 						height: 60px;
+
 						background: {
 							size: contain;
 							position: center;
@@ -656,7 +671,7 @@ body {
 						}
 					}
 
-					& + .item-icon-list__content {
+					&+.item-icon-list__content {
 						margin-top: 24px;
 
 						@media screen and (max-width: 1024px) {
@@ -675,7 +690,7 @@ body {
 						font-size: 12px;
 					}
 
-					+ .item-icon-list__title {
+					+.item-icon-list__title {
 						margin-top: 2px;
 					}
 				}
@@ -714,8 +729,9 @@ body {
 				@media screen and (max-width: 1024px) {
 					padding: 20px 24px;
 				}
-				> ul {
-					> li {
+
+				>ul {
+					>li {
 						display: flex;
 						align-items: flex-start;
 						gap: 8px;
@@ -732,14 +748,16 @@ body {
 						i {
 							width: 24px;
 							height: 24px;
+
 							background: {
 								position: center center;
 								size: cover;
 								repeat: no-repeat;
 							}
+
 							margin-top: 2px;
 
-							& + p {
+							&+p {
 								flex: 1;
 								word-break: keep-all;
 							}
@@ -748,13 +766,13 @@ body {
 								width: 20px;
 								height: 20px;
 
-								& + p {
+								&+p {
 									flex: 1;
 								}
 							}
 						}
 
-						& + li {
+						&+li {
 							margin-top: 12px;
 						}
 					}
@@ -774,11 +792,14 @@ body {
 					}
 				}
 			}
+
 			&.gray-in-img {
 				background: #f5f5f5;
+
 				img {
 					width: 80%;
 				}
+
 				@media screen and (max-width: 1024px) {
 					width: 100%;
 				}
@@ -928,7 +949,7 @@ body {
 					font-size: 20px;
 				}
 
-				& + .type__sub-title {
+				&+.type__sub-title {
 					margin-top: 4px;
 				}
 			}
@@ -968,7 +989,7 @@ body {
 						font-size: 14px;
 						gap: 8px;
 
-						& + .outlink {
+						&+.outlink {
 							margin-top: 10px;
 						}
 					}
@@ -1006,6 +1027,7 @@ body {
 					display: inline-block;
 					width: 12px;
 					height: 14px;
+
 					background: {
 						position: 0 0;
 						size: contain;
@@ -1015,7 +1037,7 @@ body {
 			}
 
 			&__wrap {
-				+ .type__wrap {
+				+.type__wrap {
 					margin-top: 32px;
 					padding-top: 32px;
 					border-top: 1px solid $DDDDDD;
@@ -1033,7 +1055,7 @@ body {
 				font-weight: 700;
 				line-height: 1.4;
 
-				+ .type__more_desc {
+				+.type__more_desc {
 					margin-top: 8px;
 				}
 			}
@@ -1072,13 +1094,14 @@ body {
 				width: 100%;
 				overflow: hidden;
 				margin: -8px 0 0 -6px;
+
 				@media screen and (max-width: 1024px) {
 					gap: 8px 4px;
 					flex-wrap: wrap;
 					align-items: flex-start;
 				}
 
-				> li {
+				>li {
 					display: inline-block;
 					margin: 8px 0 0 6px;
 					padding: 12px 20px;
@@ -1189,7 +1212,7 @@ body {
 				align-items: center;
 				padding-top: 24px;
 
-				> span {
+				>span {
 					display: flex;
 					align-items: center;
 					font-size: 14px;
@@ -1280,7 +1303,7 @@ body {
 				letter-spacing: -0.64px;
 				font-weight: 700;
 
-				& + p {
+				&+p {
 					margin-top: 8px;
 				}
 			}
@@ -1291,10 +1314,11 @@ body {
 				letter-spacing: -0.64px;
 				color: $gray666;
 
-				& + p {
+				&+p {
 					margin-top: 8px;
 				}
-				& + .hidden-info__link {
+
+				&+.hidden-info__link {
 					margin-top: 8px;
 				}
 			}
