@@ -540,6 +540,10 @@ body {
 					+img {
 						margin-top: 24px;
 					}
+					
+					& + .item-paragraph__tip {
+						margin-top: 24px;
+					}
 				}
 
 				&__type-image {
@@ -591,6 +595,41 @@ body {
 
 					+.item-paragraph__notes {
 						margin-top: 0;
+					}
+				}
+
+				&__tip {
+					background: $F5F5F5;
+					padding: 32px 24px;
+					font-size: 16px;
+					line-height: 1.8;
+					letter-spacing: -0.64px;
+					color: $gray222;
+
+					span {
+						display: block;
+						padding-bottom: 12px;
+						font-size: 20px;
+						line-height: 1.4;
+						letter-spacing: -0.8px;
+						font-weight: 700;
+						color: #007E95;
+					}
+
+					@media screen and (max-width: 1024px) {
+						width: calc(100% + 48px);
+						margin: 20px -24px 0 !important;
+						padding: 20px 24px;
+						font-size: 14px;
+						line-height: 1.8;
+						letter-spacing: -0.56px;
+						
+						span {
+							padding-bottom: 8px;
+							font-size: 17px;
+							line-height: 1.4;
+							letter-spacing: -0.68px;
+						}
 					}
 				}
 
@@ -1344,6 +1383,157 @@ body {
 				&__sub {
 					font-size: 12px;
 				}
+			}
+		}
+
+		// 레벨 영역
+		.level {
+			position: relative;
+
+			.item-img {
+				img {
+					height: 560px;
+					object-fit: cover;
+
+					@media screen and (max-width: 1024px) {
+						height: unset;
+					}
+				}
+			}
+
+			&__content {
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 120px;
+				width: 100%;
+				background: rgba(255, 255, 255, 0.6);
+				padding: 20px 60px;
+				backdrop-filter: blur(10px);
+
+				&::after {
+					content: '';
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					width: 1px;
+					height: calc(100% - 40px);
+					background: rgba(0, 0, 0, 0.1);
+				}
+
+				@media screen and (max-width: 1024px) {
+					padding: 18px 24px;
+					gap: 48px;
+
+					&::after {
+						height: calc(100% - 36px);
+					}
+				}
+			}
+
+			&__wrap {
+				display: flex;
+				align-items: center;
+				width: 100%;
+				justify-content: space-between;
+				gap: 8px;
+			}
+
+			&__ico {
+				width: 80px;
+				height: 80px;
+				background: {
+					image: url(../images/thinQ/case_4/ico_level_easy.png);
+					position: center center;
+					repeat: no-repeat;
+					size: cover;
+				};
+				&.medium {
+					background-image: url(../images/thinQ/case_4/ico_level_medium.png);
+				}
+				&.hard {
+					background-image: url(../images/thinQ/case_4/ico_level_hard.png);
+				}
+
+				&.effect {
+					background-image: url(../images/thinQ/case_4/ico_effect_good.png);
+					
+					&.normal {
+						background-image: url(../images/thinQ/case_4/ico_effect_normal.png);
+					}
+					&.bad {
+						background-image: url(../images/thinQ/case_4/ico_effect_bad.png);
+					}
+				}
+
+				@media screen and (max-width: 1024px) {
+					width: 60px;
+					height: 60px;
+				}
+			}
+
+			&__desc {
+				font-size: 14px;
+				line-height: 1.4;
+				letter-spacing: -0.56px;
+				font-weight: 500;
+				color: $gray666;
+
+				span {
+					display: block;
+					margin-top: 2px;
+					font-size: 20px;
+					line-height: 1.4;
+					letter-spacing: -0.8px;
+					font-weight: 700;
+					color: $black;
+					word-break: break-all;
+				}
+
+				@media screen and (max-width: 1024px) {
+					font-size: 12px;
+
+					span {
+						font-size: 17px;
+					}
+				}
+			}
+		}
+	}
+
+	// case4용 간격
+	.case4 {
+		.item {
+			&-paragraph + .item-img {
+				margin-top: 40px;
+	
+				@media screen and (max-width: 1024px) {
+					margin-top: 20px;
+				}
+			}
+	
+			&-img + .item-paragraph {
+				margin-top: 24px;
+	
+				@media screen and (max-width: 1024px) {
+					margin-top: 20px;
+				}
+			}
+	
+			&-paragraph + .item-step {
+				margin-top: 40px;
+	
+				@media screen and (max-width: 1024px) {
+					margin-top: 20px;
+				}
+			}
+	
+			&-step + .item-step {
+				margin-top: 40px;
 			}
 		}
 	}
