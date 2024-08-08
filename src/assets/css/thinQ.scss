@@ -1447,26 +1447,26 @@ body {
 				width: 80px;
 				height: 80px;
 				background: {
-					image: url(../images/thinQ/case_4/ico_level_easy.png);
+					image: url(../images/thinQ/common/ico_level_easy.png);
 					position: center center;
 					repeat: no-repeat;
 					size: cover;
 				};
 				&.medium {
-					background-image: url(../images/thinQ/case_4/ico_level_medium.png);
+					background-image: url(../images/thinQ/common/ico_level_medium.png);
 				}
 				&.hard {
-					background-image: url(../images/thinQ/case_4/ico_level_hard.png);
+					background-image: url(../images/thinQ/common/ico_level_hard.png);
 				}
 
 				&.effect {
-					background-image: url(../images/thinQ/case_4/ico_effect_good.png);
+					background-image: url(../images/thinQ/common/ico_effect_good.png);
 					
 					&.normal {
 						background-image: url(../images/thinQ/case_4/ico_effect_normal.png);
 					}
 					&.bad {
-						background-image: url(../images/thinQ/case_4/ico_effect_bad.png);
+						background-image: url(../images/thinQ/common/ico_effect_bad.png);
 					}
 				}
 
